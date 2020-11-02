@@ -1,9 +1,16 @@
 body {
-  background-color: powderblue;
+  background-color: darkblue;
 }
 h1 {
   color: blue;
 }
 p {
-  color: red;
+  color: white;
+}
+.demoE [style*="color: red"] { 
+  color: firebrick !important;
+}
+
+.foo[style*="color: red"] { 
+  color: firebrick !important;
 }
