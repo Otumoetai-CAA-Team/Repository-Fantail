@@ -10,8 +10,3 @@ body.appendChild(button);
 button.addEventListener ("click", function() {
   alert("did something");
 });
-
-/* Read
-
-https://css-tricks.com/use-button-element/
-*/

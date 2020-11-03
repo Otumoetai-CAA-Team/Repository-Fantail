@@ -7,10 +7,12 @@ h1 {
 p {
   color: white;
 }
-.demoE [style*="color: red"] { 
-  color: firebrick !important;
+#demoE { 
+  background-color: red;
 }
-
-.foo[style*="color: red"] { 
-  color: firebrick !important;
+#demoM {
+  background-color: lightgreen;
+}
+#demoW {
+  background-color: limegreen;
 }
