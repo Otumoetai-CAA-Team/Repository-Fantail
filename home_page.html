@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <script src=index.js></script>
+        <title>Document</title>
+    </head>
+    <h1>Mentality</h1>
+    <body>
+      
+        <div class="container">
+            <p>Welcome to Mentality</p>
+          </div>
+          <div class="container">
+            <p>This is an app for mental health for all otumoetai students</p>
+          </div>
+        <p>
+        <button id="demoE">Education</button>
+        <button id="demoM">Meditation</button>
+        <button id="demoW">Writing</button>
+        <a href="page_2.html" class="btn btn-primary">Go to page 2</a>
+        </p>
+
+          <script>
+          document.getElementById("demoE").onclick = function() {myFunctionE()};
+          
+          function myFunctionE() {
+            document.getElementById("demoE").innerHTML = "This will take you to Education";
+          }
+
+
+          document.getElementById("demoM").onclick = function() {myFunctionM()};
+          function myFunctionM() {
+            document.getElementById("demoM").innerHTML = "This will take you to Meditation";
+
+         
+
+          document.getElementById("demoW").onclick = function() {myFunctionW()};
+          
+          function myFunctionW() {
+            document.getElementById("demoW").innerHTML = "This will take you to Writing";
+          }
+          }
+          </script>
+        
+    </body>
+</html>
