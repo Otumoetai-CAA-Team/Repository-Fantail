@@ -7,7 +7,7 @@ const app = express();
 const connenction = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'tnetennba1234',
+    password: 'tnetennba123',
     database: 'mydb',
     charset: 'utf8'
 });
@@ -19,7 +19,7 @@ app.get('/', function(req, res){
         console.log("Error")
     }
 
-$query = 'SELECT title, author FROM book';
+$query = 'SELECT * FROM book';
 connenction.query($query, function(err, rows){
 
     if(err){
