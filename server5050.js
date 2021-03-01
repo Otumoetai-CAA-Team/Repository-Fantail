@@ -2,10 +2,11 @@ const http = require('http');
 const mysql = require('mysql');
 const express = require('express');
 var fs = require('fs');
+var path = require('path');
 
 
 const app = express();
-app.use('/Repository-Fantail',express.static(`/Repository-Fantail`));
+app.use(express.static(path.join(__dirname, '/')));
 
 const connenction = mysql.createConnection({
     host: 'localhost',
@@ -28,12 +29,6 @@ connenction.query($query, function(err, rows){
     if(err){
         console.log("Error in executing the query");
     }
-    fs.readFile('index.css', (err, datacss) =>{
-
-        res.w
-
-
-    })
     fs.readFile('home_page.html', (err, data) =>{
         res.writeHead(200, {'Content-Type': 'text/html; charset=utf8'});
         res.write(data, 'utf8')
