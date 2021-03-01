@@ -2,7 +2,11 @@ const http = require('http');
 const mysql = require('mysql');
 const express = require('express');
 var fs = require('fs');
+var path = require('path');
+
+
 const app = express();
+app.use(express.static(path.join(__dirname, '/')));
 
 const connenction = mysql.createConnection({
     host: 'localhost',
