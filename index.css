@@ -1,28 +1,42 @@
 
-html {
-  height: 100%;
-}
-
 body {
-  height: 100%;
-  margin: 0;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  
+  max-width: 100%;
+  height: auto;
+  /* display: block;
+  margin-left: auto;
+  margin-right: auto; */
   background-image: url("Images/jasper-lake.jpg");
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
   
 }
 h1 {
-  color: blue;
+  
+  color:#14342B;
+  font-size: 100px;
 }
 p {
-  color: white;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
 }
+
 #demoE { 
-  background-color: red;
+  background-color: #A882DD;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
 }
 #demoM {
-  background-color: lightgreen;
+  background-color: #A882DD;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
 }
 #demoW {
-  background-color: limegreen;
+  background-color: #A882DD;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
 }
