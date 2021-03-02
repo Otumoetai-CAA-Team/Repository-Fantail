@@ -36,13 +36,28 @@ connenction.query($query, function(err, rows){
         for(var i =0; i < 3; i ++){
             res.write(rows[i].author + ', ')
             res.write('who is: ' + rows[i].title + '<br>')
-
+        
         }
         res.end();
     })
 })
 })
 });
+
+
+
+
+app.get('/page_2', function(req, res){
+
+    fs.readFile('page_2.html', (err, data_2) =>{
+        res.writeHead(200, {'Content-Type': 'text/html; charset=utf8'});
+        res.write(data_2, 'utf8')
+
+        res.write('<p> welcome to our second page </p>');
+        res.end();
+    
+});
+})
 
 app.listen(5050, ()=>{
     console.log('Server running on port 5050')
