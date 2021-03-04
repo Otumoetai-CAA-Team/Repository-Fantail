@@ -8,6 +8,12 @@
         <title>Document</title>
     </head>
     <body>
+
+      <script>
+        function visitPage(){
+          window.location="/page_2";
+            }
+      </script>
       
         <div class="container">
           <img src="images/jasper-lake.jpg" style="width: auto;">
@@ -23,11 +29,6 @@
         </p>
 
           <script>
-          document.getElementById("demoE").onclick = function() {myFunctionE()};
-          
-          function myFunctionE() {
-            document.getElementById("demoE").innerHTML = "This will take you to Education";
-          }
 
 
           document.getElementById("demoM").onclick = function() {myFunctionM()};
@@ -35,13 +36,13 @@
             document.getElementById("demoM").innerHTML = "This will take you to Meditation";
 
          
-
+          }
           document.getElementById("demoW").onclick = function() {myFunctionW()};
           
           function myFunctionW() {
             document.getElementById("demoW").innerHTML = "This will take you to Writing";
           }
-          }
+          
           </script>
         
     </body>

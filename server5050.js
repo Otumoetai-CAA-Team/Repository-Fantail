@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, '/')));
 const connenction = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'tnetennba123',
+    password: 'tnetennba1234',
     database: 'mydb',
     charset: 'utf8'
 });
@@ -20,10 +20,10 @@ app.get('/', function(req, res){
 
  connenction.connect(function(err){
     if(err){
-        console.log("Error")
+        console.log("Error connecting to the database")
     }
 
-$query = 'SELECT * FROM book';
+$query = 'SELECT * FROM mydb.book';
 connenction.query($query, function(err, rows){
 
     if(err){
