@@ -10,16 +10,19 @@ body {
   position: relative;
 }
 .container .text-block .buttons{
-  background-color: #35acdb;
-  font-size: 30px;
+  color: #F9F1F1;
+  background-color: #219EBC;
+  font-size: 20px;
+  font-family: 'Volkhov', serif;
 }
+
 /* Bottom right text */
 .text-block {
   position: absolute;
-  top: 50px;
-  bottom: 50px;
-  right: 500px;
-  left: 500px;
+  top: 3%;
+  bottom: 3%;
+  right: 25%;
+  left: 25%;
   background-color: #EDF6F9;
   color: white;
   padding-left: 20px;
@@ -32,6 +35,7 @@ h1 {
   
   color:#341414;
   font-size: 75px;
+  background-color: #8ECAE6;
 }
 
 p {
