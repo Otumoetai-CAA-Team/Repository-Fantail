@@ -30,15 +30,15 @@ connenction.query($query, function(err, rows){
         console.log("Error in executing the query");
     }
     fs.readFile('home_page.html', (err, data) =>{
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf8'});
+        res.writeHead(200   , {'Content-Type': 'text/html; charset=utf8'});
         res.write(data, 'utf8')
-        res.write("In our team we have: <br>")
+        res.write('In our team we have: <br>');
         for(var i =0; i < 3; i ++){
             res.write(rows[i].author + ', ')
-            res.write('who is: ' + rows[i].title + '<br>')
+            res.write(`<body>who is: ${rows[i].title}<br> </body>`)
         
         }
-        res.end();
+        res.end('<div class="container"> Hello </div>');
     })
 })
 })

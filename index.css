@@ -10,7 +10,7 @@ body {
   position: relative;
 }
 .container .text-block .buttons{
-  background-color: #FFDDD2;
+  background-color: #35acdb;
   font-size: 30px;
 }
 /* Bottom right text */
@@ -30,12 +30,12 @@ body {
 
 h1 {
   
-  color:#14342B;
+  color:#341414;
   font-size: 75px;
 }
 
 p {
-  color: black;
+  color: rgb(255, 255, 255);
   font-family: 'Times New Roman', Times, serif;
   font-size: 20px;
 }
