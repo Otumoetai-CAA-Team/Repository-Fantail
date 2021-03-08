@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, '/')));
 const connenction = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'tnetennba123',
+    password: 'thermochemistry2021',
     database: 'mydb',
     charset: 'utf8'
 });
