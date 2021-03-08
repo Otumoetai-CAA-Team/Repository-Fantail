@@ -19,10 +19,10 @@ body {
 /* Bottom right text */
 .text-block {
   position: absolute;
-  top: 50px;
-  bottom: 50px;
-  right: 500px;
-  left: 500px;
+  top: 3%;
+  bottom: 3%;
+  right: 25%;
+  left: 25%;
   background-color: #EDF6F9;
   color: white;
   padding-left: 20px;
