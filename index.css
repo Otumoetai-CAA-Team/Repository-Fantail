@@ -2,6 +2,7 @@
   overflow: hidden;
   background-color: #005151;
   padding: 20px 10px;
+  top: 0%;
 }
 
 .header a {
@@ -46,23 +47,22 @@ body {
   height: auto;
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
-}
-/* Container holding the image and the text */
-.container {
-  position: relative;
+  background-image: url('Images/bady-abbas-MDgRcuGYu58-unsplash.jpg');
+  width: 99%;
+  background-size: 100%;
 }
 
 /* Bottom right text */
 .text-block {
   position: absolute;
-  top: 0%;
-  bottom: 40%;
+  top: 20%;
+  bottom: 20%;
   right: 25%;
   left: 25%;
   background-color: #D6FFFF;
   padding-left: 20px;
   padding-right: 20px;
-  background-image: linear-gradient(#004D66, #A2E4B8);
+  background-image: linear-gradient(#4785FF, #707BEB, #9971D6);
   border-radius: 50px;
   
 }
@@ -75,12 +75,9 @@ body {
   border-radius: 50px;
   transition-duration: 0.3s;
   cursor: pointer;
-}
-
-.container .text-block .grid-item {
-  display: grid;
-  grid-column-gap: 50px;
-  
+  padding: 3%;
+  border: 5px solid #F4A615;
+  width: 60%;
 }
 
 .container .text-block .buttons:hover{
@@ -96,7 +93,7 @@ h1 {
   font-size: 500%;
   background-color: #005151;
   border-radius: 40px;
-  font-weight: 100;
+  font-weight: 10%;
 }
 
 p {
