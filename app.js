@@ -69,8 +69,6 @@ app.get('/page_2', function(req, res){
     fs.readFile('page_2.html', (err, data_2) =>{
         res.writeHead(200, {'Content-Type': 'text/html; charset=utf8'});
         res.write(data_2, 'utf8')
-
-        res.write('<p> welcome to our second page </p>');
         res.end();
     
 });

@@ -24,13 +24,14 @@
   .header a:hover {
     background-color: #ddd;
     color: black;
+  
   }
   
   .header-right {
     float: right;
   }
   
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 600px) {
     .header a {
       float: none;
       display: block;
@@ -63,14 +64,10 @@
 }
 }
 
-body
-{
-    background-color: grey;
+body {
     font-family: 'Courier New', Courier, monospace;
-    background-image: url('Images/jess-bailey-l3N9Q27zULw-unsplash.jpg');
-    width: 99%;
 }
 .p1
 {
-    text-align: center
+    text-align: center;
 }
