@@ -1,3 +1,11 @@
+html { 
+  background: url(Images/bady-abbas-MDgRcuGYu58-unsplash.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .header {
   overflow: hidden;
   background-color: #005151;
@@ -48,8 +56,6 @@ body {
   height: auto;
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
-  background-image: url('Images/bady-abbas-MDgRcuGYu58-unsplash.jpg');
-  background-size: 100vw;
 }
 
 /* Bottom right text */
@@ -61,7 +67,6 @@ body {
   left: 25%;
   padding-left: 20px;
   padding-right: 20px;
-  /* background-image: linear-gradient(#4785FF, #707BEB, #9971D6); */
   border-radius: 50px;
   
 }
@@ -75,7 +80,6 @@ body {
   transition-duration: 0.3s;
   cursor: pointer;
   padding: 3%;
-  /* border: 5px solid #F4A615; */
   width: 60%;
 }
 
@@ -84,6 +88,7 @@ body {
   color: #F9F1F1;
   font-size: 1.5vw;
   border-color: #003D52;
+  transform: rotate(360);
 }
 
 #wrt_button {
@@ -94,11 +99,11 @@ body {
 h1 {
   color:#F9F1F1;
   font-family: 'Work Sans';
-  font-size: 500%;
+  font-size: 10vw;
   font-weight: 10%;
-  margin: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 0.5vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
 }
 
 p {
