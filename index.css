@@ -49,7 +49,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
   background-image: url('Images/bady-abbas-MDgRcuGYu58-unsplash.jpg');
-  background-size: 100%;
+  background-size: 100vw;
 }
 
 /* Bottom right text */
@@ -69,8 +69,8 @@ body {
 .container .text-block .buttons{
   color: #F9F1F1;
   background-color: #2D5181;
-  font-size: 125%;
-  font-family: 'Roboto Slab', serif;
+  font-size: 1.25vw;
+  font-family: 'Work Sans';
   border-radius: 50px;
   transition-duration: 0.3s;
   cursor: pointer;
@@ -81,9 +81,9 @@ body {
 
 .container .text-block .buttons:hover{
   background-color: #7094B4;
-  color: #651D32;
-  font-size: 130%;
-  border-color: #470A68;
+  color: #F9F1F1;
+  font-size: 1.5vw;
+  border-color: #003D52;
 }
 
 #wrt_button {
@@ -93,6 +93,7 @@ body {
 
 h1 {
   color:#F9F1F1;
+  font-family: 'Work Sans';
   font-size: 500%;
   font-weight: 10%;
   margin: 20px;
