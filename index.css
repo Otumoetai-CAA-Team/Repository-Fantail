@@ -59,18 +59,16 @@ body {
   bottom: 20%;
   right: 25%;
   left: 25%;
-  background-color: #87c9cd ;
   padding-left: 20px;
   padding-right: 20px;
   /* background-image: linear-gradient(#4785FF, #707BEB, #9971D6); */
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-radius: 50px;
   
 }
 
 .container .text-block .buttons{
   color: #F9F1F1;
-  background-color: #007A7A;
+  background-color: #2D5181;
   font-size: 125%;
   font-family: 'Roboto Slab', serif;
   border-radius: 50px;
@@ -82,7 +80,7 @@ body {
 }
 
 .container .text-block .buttons:hover{
-  background-color: #F9CB77;
+  background-color: #7094B4;
   color: #651D32;
   font-size: 130%;
   border-color: #470A68;
@@ -96,7 +94,6 @@ body {
 h1 {
   color:#F9F1F1;
   font-size: 500%;
-  background-color: #005151;
   font-weight: 10%;
   margin: 20px;
   margin-left: 20px;
