@@ -13,7 +13,7 @@ app.set('view engine', 'ejs')
 const connenction = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'thermochemistry2021',
+    password: 'tnetennba1234',
     database: 'mydb',
     charset: 'utf8'
 });
