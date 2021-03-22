@@ -40,6 +40,25 @@ html {
 
 .header-right {
   float: right;
+  color: #003D52;
+}
+
+.header .nav_buttons {
+  float: right;
+  background-color: #003D52;
+  color: #A2E4B8;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 125%; 
+  line-height: 25px;
+  border-radius: 4px;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.header .nav_buttons:hover {
+  background-color: #ddd;
+  color: black;
 }
 
 /* ---- Code to make the Nav Bar Responsive ---- Changes from horizontal to stacked when screen size is 500px or less */
@@ -63,7 +82,7 @@ body {
   text-align: center;
 }
 
-/* ----- Header and button container */
+/* ----- Header and button container styling -----*/
 .text-block {
   position: absolute;
   top: 20%;
@@ -99,7 +118,7 @@ body {
 }
 
 /* ----- Spacing between middle button ----- */
-#wrt_button {
+#button_W {
   margin-top: 1%;
   margin-bottom: 1%;
 }
