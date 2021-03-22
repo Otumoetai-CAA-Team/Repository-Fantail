@@ -1,3 +1,4 @@
+/* ----- Background Image Styling ----- */
 html { 
   background: url(Images/bady-abbas-MDgRcuGYu58-unsplash.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -6,6 +7,7 @@ html {
   background-size: cover;
 }
 
+/* ----- Nav Bar Styling ----- */
 .header {
   overflow: hidden;
   background-color: #005151;
@@ -13,6 +15,7 @@ html {
   top: 0%;
 }
 
+/* ---- Text Styling for Nav Bar ---- */
 .header a {
   float: left;
   color: #A2E4B8;
@@ -39,6 +42,7 @@ html {
   float: right;
 }
 
+/* ---- Code to make the Nav Bar Responsive ---- Changes from horizontal to stacked when screen size is 500px or less */
 @media screen and (max-width: 500px) {
   .header a {
     float: none;
@@ -51,6 +55,7 @@ html {
   }
 }
 
+/* ----- Body Styling ----- */
 body {
   max-width: 100%;
   height: auto;
@@ -58,7 +63,7 @@ body {
   text-align: center;
 }
 
-/* Bottom right text */
+/* ----- Header and button container */
 .text-block {
   position: absolute;
   top: 20%;
@@ -71,6 +76,7 @@ body {
   
 }
 
+/* ----- Button Styling ----- */
 .container .text-block .buttons{
   color: #F9F1F1;
   background-color: #2D5181;
@@ -83,6 +89,7 @@ body {
   width: 60%;
 }
 
+/* ----- Hover Effect on Buttons ----- */
 .container .text-block .buttons:hover{
   background-color: #7094B4;
   color: #F9F1F1;
@@ -91,11 +98,13 @@ body {
   transform: rotate(360);
 }
 
+/* ----- Spacing between middle button ----- */
 #wrt_button {
   margin-top: 1%;
   margin-bottom: 1%;
 }
 
+/* ----- Title Styling ----- */
 h1 {
   color:#F9F1F1;
   font-family: 'Work Sans';
@@ -104,10 +113,4 @@ h1 {
   margin: 0.5vw;
   margin-left: 1vw;
   margin-right: 1vw;
-}
-
-p {
-  color: rgb(255, 255, 255);
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 20px;
 }
