@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="/index.css" />
+        <link rel="stylesheet" type="text/css" href="/CSS/app.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -14,20 +14,38 @@
     <body>
         
       <script>
-        function visitPage(){
-          window.location="/page_2";
+        function visitPage_Edu(){
+          window.location="/education";
             }
+
+           function vistPage_Med(){
+             window.location="/meditation"
+           } 
+           function vistPage_Wri(){
+             window.location="/writing"
+           } 
+           function vistPage_About(){
+            window.location="/about"
+           }
+           function vistPage_Contact(){
+             window.location="/contact"
+           }
+           function vistPage_Home(){
+             window.location="/"
+           }
 
             
       </script>
+        
 
+          
         <div class="header">
-          <a href="#default" class="logo">SchoolLogo</a>
-          <div class="header-right">
-            <a class="active" href="#home">Home</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-          </div>
+          <a class="logo">SchoolLogo</a>
+            
+            <button class="nav_buttons" onclick="vistPage_About();">About</button>
+            <button class="nav_buttons" onclick="vistPage_Contact();">Contact</button>
+            <button class="nav_buttons" onclick="vistPage_Home();">Home</button>
+
         </div>
 
         <div class="container">
@@ -35,12 +53,10 @@
               <h1>Mentality</h1>
               <!-- <p>This is an app for mental health for all otumoetai students<br/> -->
              
-              <button id="med_button" class="buttons">Meditation</button>
-              <br/>
-              <button id="wrt_button" class="buttons">Writing</button>
-              <a>
-                <button id="ed_button" class="buttons", onclick="visitPage();">Education</button>
-              </a>
+                <button id="button_M" class="buttons", onclick="vistPage_Med();">Meditation</button>
+                <button id="button_W" class="buttons", onclick="vistPage_Wri();"">Writing</button>
+                <button id="button_E" class="buttons", onclick="visitPage_Edu();">Education</button>
+                
               <h2>
                 <script>
                 for(var i =0; i < 3; i ++){
@@ -65,20 +81,7 @@
               
              </div> 
         </div>
-        </p>
-          <script>
-          document.getElementById("demoM").onclick = function() {myFunctionM()};
-          function myFunctionM() {
-            document.getElementById("demoM").innerHTML = "This will take you to Meditation";
-         
-          }
-          document.getElementById("demoW").onclick = function() {myFunctionW()};
-          
-          function myFunctionW() {
-            document.getElementById("demoW").innerHTML = "This will take you to Writing";
-          }
-          
-          </script>
+      </p>
         
     </body>
 </html>
