@@ -67,11 +67,11 @@
     float: none;
   }
 }
-body {
-    font-family: 'Courier New', Courier, monospace;
+
+h1 {
+  font-family: "Work Sans", sans-serif;
 }
 
-.p1
-{
-    text-align: center;
+p1 {
+  font-family: 'Open Sans', sans-serif;
 }

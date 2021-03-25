@@ -108,6 +108,6 @@ app.get('/contact', function(req, res){
     })
 })
 
-app.listen(5050, ()=>{
+app.listen(process.env.PORT || 5050, ()=>{
     console.log('Server running on port 5050')
 })
