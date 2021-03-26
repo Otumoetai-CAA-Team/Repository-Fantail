@@ -10,13 +10,6 @@ app.use(express.static(path.join(__dirname, '/')));
 
 app.set('view engine', 'ejs')
 
-const connenction = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'tnetennba123',
-    database: 'mydb',
-    charset: 'utf8'
-});
 
 app.get('/', function(req, res){
     res.render('home_page')
