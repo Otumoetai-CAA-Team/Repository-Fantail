@@ -66,15 +66,13 @@ html {
 
 /* ---- Code to make the Nav Bar Responsive ---- Changes from horizontal to stacked when screen size is 500px or less */
 @media screen and (max-width: 500px) {
-  .header a {
+  .header a{
     float: none;
     display: block;
     text-align: left;
+    width: 100%;
   }
   
-  .header-right {
-    float: none;
-  }
 }
 
 /* ----- Body Styling ----- */
@@ -87,11 +85,8 @@ body {
 
 /* ----- Header and button container styling -----*/
 .text-block {
-  position: absolute;
-  top: 20%;
-  bottom: 20%;
-  right: 25%;
-  left: 25%;
+  position: relative;
+  margin: auto;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 50px;
@@ -102,13 +97,13 @@ body {
 .container .text-block .buttons{
   color: #F9F1F1;
   background-color: #2D5181;
-  font-size: 1.25vw;
+  font-size: 150%;
   font-family: 'Work Sans';
   border-radius: 50px;
   transition-duration: 0.3s;
   cursor: pointer;
   padding: 3%;
-  width: 60%;
+  width: 50vw;
 }
 
 /* ----- Hover Effect on Buttons ----- */
