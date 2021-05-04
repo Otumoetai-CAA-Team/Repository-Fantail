@@ -84,7 +84,7 @@ body {
 }
 
 /* ----- Header and button container styling -----*/
-.text-block {
+.grid-container {
   position: relative;
   margin: auto;
   padding-left: 20px;
@@ -94,7 +94,7 @@ body {
 }
 
 /* ----- Button Styling ----- */
-.container .text-block .buttons{
+.container .grid-container .buttons{
   color: #F9F1F1;
   background-color: #2D5181;
   font-size: 150%;
@@ -103,11 +103,11 @@ body {
   transition-duration: 0.3s;
   cursor: pointer;
   padding: 3%;
-  width: 50vw;
+  width: 30vw;
 }
 
 /* ----- Hover Effect on Buttons ----- */
-.container .text-block .buttons:hover{
+.container .grid-container .buttons:hover{
   background-color: #7094B4;
   color: #F9F1F1;
   font-size: 1.5vw;
@@ -119,6 +119,12 @@ body {
 #button_W {
   margin-top: 1%;
   margin-bottom: 1%;
+}
+
+/* grid styling to space buttons out a */
+.grid-container{
+  display: grid;
+  grid-template-columns: auto;
 }
 
 /* ----- Title Styling ----- */
