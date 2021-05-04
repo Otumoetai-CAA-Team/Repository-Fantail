@@ -1,4 +1,4 @@
-/* ----- background image styling ----- */
+/* ----- Background Image Styling ----- */
 html { 
   background: url(/Images/bady-abbas-MDgRcuGYu58-unsplash.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -7,7 +7,7 @@ html {
   background-size: cover;
 }
 
-/* ----- nav bar styling ----- */
+/* ----- Nav Bar Styling ----- */
 .header {
   overflow: hidden;
   background-color: #005151;
@@ -16,7 +16,7 @@ html {
   border-radius: 10px;
 }
 
-/* ---- text styling for nav bar ---- */
+/* ---- Text Styling for Nav Bar ---- */
 .header a {
   float: left;
   color: #A2E4B8;
@@ -64,7 +64,7 @@ html {
   border-radius: 50px;
 }
 
-/* ---- code to make the nav bar responsive ---- changes from horizontal to stacked when screen size is 500px or less */
+/* ---- Code to make the Nav Bar Responsive ---- Changes from horizontal to stacked when screen size is 500px or less */
 @media screen and (max-width: 500px) {
   .header a{
     float: none;
@@ -75,7 +75,7 @@ html {
   
 }
 
-/* ----- body styling ----- */
+/* ----- Body Styling ----- */
 body {
   max-width: 100%;
   height: auto;
@@ -83,7 +83,7 @@ body {
   text-align: center;
 }
 
-/* ----- header and button container styling -----*/
+/* ----- Header and button container styling -----*/
 .text-block {
   position: relative;
   margin: auto;
@@ -93,41 +93,35 @@ body {
   
 }
 
-/* ----- button styling ----- */
-.container .grid-container .buttons{
+/* ----- Button Styling ----- */
+.container .text-block .buttons{
   color: #F9F1F1;
   background-color: #2D5181;
-  font-size: 2vw;
+  font-size: 150%;
   font-family: 'Work Sans';
   border-radius: 50px;
-  border-color: black;
   transition-duration: 0.3s;
   cursor: pointer;
   padding: 3%;
-  width: 30%;
+  width: 50vw;
 }
 
-/* ----- hover effect on buttons ----- */
-.container .grid-container .buttons:hover{
-  background-color: #6E92B4;
-  color: black;
-  font-size: 2.15vw;
-  border-color: black;
+/* ----- Hover Effect on Buttons ----- */
+.container .text-block .buttons:hover{
+  background-color: #7094B4;
+  color: #F9F1F1;
+  font-size: 1.5vw;
+  border-color: #003D52;
+  transform: rotate(360);
 }
 
-/* ----- spacing between middle button ----- */
+/* ----- Spacing between middle button ----- */
 #button_W {
   margin-top: 1%;
   margin-bottom: 1%;
 }
 
-/* grid styling to space buttons out a */
-.grid-container{
-  display: grid;
-  grid-template-columns: auto;
-}
-
-/* ----- title styling ----- */
+/* ----- Title Styling ----- */
 h1 {
   color:#F9F1F1;
   font-family: 'Work Sans';
@@ -137,4 +131,3 @@ h1 {
   margin-left: 1vw;
   margin-right: 1vw;
 }
-
