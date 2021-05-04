@@ -1,4 +1,4 @@
-# 2021_App_project
+# Mentality
 
 <!--- These are examples. See https://shields.io for others or to customize this set of shields. You might want to include dependencies, project status and licence info here --->
 ![GitHub repo size](https://img.shields.io/github/repo-size/scottydocs/README-template.md)
@@ -7,7 +7,12 @@
 ![GitHub forks](https://badgen.net/github/forks/micromatch/micromatch)
 ![Twitter Follow](https://img.shields.io/twitter/follow/scottydocs?style=social)
 
-Project name is an app that allows students of Otumoetai College to do `<action/task_it_does>`.
+Mentality is a web-app made for students of Otumoetai College to:
+
+- Give students another option to seek mental health stability
+- Give the school more awareness of counselling services and 
+- Provide additional support for students and counselors
+
 
 There are four main components to the app: education, brain games, meditation and writing, as well as information on the school mental health services. 
 
