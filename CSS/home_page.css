@@ -1,4 +1,4 @@
-/* ----- Background Image Styling ----- */
+/* ----- background image styling ----- */
 html { 
   background: url(/Images/bady-abbas-MDgRcuGYu58-unsplash.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -7,7 +7,7 @@ html {
   background-size: cover;
 }
 
-/* ----- Nav Bar Styling ----- */
+/* ----- nav bar styling ----- */
 .header {
   overflow: hidden;
   background-color: #005151;
@@ -16,7 +16,7 @@ html {
   border-radius: 10px;
 }
 
-/* ---- Text Styling for Nav Bar ---- */
+/* ---- text styling for nav bar ---- */
 .header a {
   float: left;
   color: #A2E4B8;
@@ -64,7 +64,7 @@ html {
   border-radius: 50px;
 }
 
-/* ---- Code to make the Nav Bar Responsive ---- Changes from horizontal to stacked when screen size is 500px or less */
+/* ---- code to make the nav bar responsive ---- changes from horizontal to stacked when screen size is 500px or less */
 @media screen and (max-width: 500px) {
   .header a{
     float: none;
@@ -75,7 +75,7 @@ html {
   
 }
 
-/* ----- Body Styling ----- */
+/* ----- body styling ----- */
 body {
   max-width: 100%;
   height: auto;
@@ -83,7 +83,7 @@ body {
   text-align: center;
 }
 
-/* ----- Header and button container styling -----*/
+/* ----- header and button container styling -----*/
 .text-block {
   position: relative;
   margin: auto;
@@ -93,35 +93,41 @@ body {
   
 }
 
-/* ----- Button Styling ----- */
-.container .text-block .buttons{
+/* ----- button styling ----- */
+.container .grid-container .buttons{
   color: #F9F1F1;
   background-color: #2D5181;
-  font-size: 150%;
+  font-size: 2vw;
   font-family: 'Work Sans';
   border-radius: 50px;
+  border-color: black;
   transition-duration: 0.3s;
   cursor: pointer;
   padding: 3%;
-  width: 50vw;
+  width: 30%;
 }
 
-/* ----- Hover Effect on Buttons ----- */
-.container .text-block .buttons:hover{
-  background-color: #7094B4;
-  color: #F9F1F1;
-  font-size: 1.5vw;
-  border-color: #003D52;
-  transform: rotate(360);
+/* ----- hover effect on buttons ----- */
+.container .grid-container .buttons:hover{
+  background-color: #6E92B4;
+  color: black;
+  font-size: 2.15vw;
+  border-color: black;
 }
 
-/* ----- Spacing between middle button ----- */
+/* ----- spacing between middle button ----- */
 #button_W {
   margin-top: 1%;
   margin-bottom: 1%;
 }
 
-/* ----- Title Styling ----- */
+/* grid styling to space buttons out a */
+.grid-container{
+  display: grid;
+  grid-template-columns: auto;
+}
+
+/* ----- title styling ----- */
 h1 {
   color:#F9F1F1;
   font-family: 'Work Sans';
@@ -131,3 +137,4 @@ h1 {
   margin-left: 1vw;
   margin-right: 1vw;
 }
+
