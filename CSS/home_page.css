@@ -112,7 +112,7 @@ body {
   color: #F9F1F1;
   font-size: 1.5vw;
   border-color: #003D52;
-  transform: rotate(360);
+
 }
 
 /* ----- Spacing between middle button ----- */
@@ -136,4 +136,14 @@ h1 {
   margin: 0.5vw;
   margin-left: 1vw;
   margin-right: 1vw;
+}
+
+.footer{
+  position:relative;
+  bottom:0;
+  left:0;
+  width: 100%;
+  height: 90px;
+  background-color: #005151;
+  
 }
