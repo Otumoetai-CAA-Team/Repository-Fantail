@@ -15,30 +15,28 @@ app.set('view engine', 'ejs')
 
 table_names = []
 
-MongoClient.connect(uri, function(err, db) {
-
+MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
     if (err) throw err;
     var dbo = db.db("mydb");
 
-    var query = { User: "Alex" };
+    var query = { Age: "17" };
 
-    dbo.collection("mydbcollect").find(query, {'_id': false}).toArray(function(err, result) {
-      if (err) throw err;
-      table_names.push(JSON.stringify(result))
-      console.log(table_names)
-      //db.close();
+    dbo.collection("mydbcollect").find(
+      query,
+      {User: 1, _id:0}
+   ).forEach(function(myDocument) {
+      console.log(myDocument.User);
+      table_names.push(myDocument.User);
+      console.log(table_names);
+   });
       
-    
-
-
     var data = {name: table_names}
 
-    console.log(data)
+    //console.log(data)
     app.get('/', function(req, res){
         res.render('home_page', {data, data})
     });
     });
-});
 
 app.get('/education', function(req, res){
 
