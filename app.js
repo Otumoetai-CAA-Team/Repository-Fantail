@@ -4,7 +4,7 @@ const express = require('express');
 var fs = require('fs');
 var path = require('path');
 
-var MongoClient = require('mongodb').MongoClient;
+//var MongoClient = require('mongodb').MongoClient;
 const { table } = require('console');
 const uri = "mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/test";
 
@@ -15,28 +15,28 @@ app.set('view engine', 'ejs')
 
 table_names = []
 
-MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
-    if (err) throw err;
-    var dbo = db.db("mydb");
+// MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
+//     if (err) throw err;
+//     var dbo = db.db("mydb");
 
-    var query = { Age: "17" };
+//     var query = { Age: "17" };
 
-    dbo.collection("mydbcollect").find(
-      query,
-      {User: 1, _id:0}
-   ).forEach(function(myDocument) {
-      console.log(myDocument.User);
-      table_names.push(myDocument.User);
-      console.log(table_names);
-   });
+//     dbo.collection("mydbcollect").find(
+//       query,
+//       {User: 1, _id:0}
+//    ).forEach(function(myDocument) {
+//       console.log(myDocument.User);
+//       table_names.push(myDocument.User);
+//       console.log(table_names);
+//    });
       
-    var data = {name: table_names}
+//     var data = {name: table_names}
 
     //console.log(data)
     app.get('/', function(req, res){
-        res.render('home_page', {data, data})
+        res.render('home_page')
     });
-    });
+  
 
 app.get('/education', function(req, res){
 
