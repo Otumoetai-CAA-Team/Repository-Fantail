@@ -19,7 +19,7 @@ MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
     if (err) throw err;
     var dbo = db.db("mydb");
 
-    var query = { Age: "17" };
+    var query = { Age: "18" };
 
     dbo.collection("mydbcollect").find(
       query,
