@@ -32,11 +32,11 @@ MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
       
     var data = {name: table_names}
 
-    //console.log(data)
+    console.log(data)
     app.get('/', function(req, res){
-        res.render('home_page', {data, data})
+        res.render('home_page',data, data)
     });
-    });
+});
 
 app.get('/education', function(req, res){
 
