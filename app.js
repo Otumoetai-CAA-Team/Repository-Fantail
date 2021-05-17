@@ -34,7 +34,7 @@ MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
 
     console.log(data)
     app.get('/', function(req, res){
-        res.render('home_page',data, data)
+        res.render('home_page', {data, data})
     });
 });
 
