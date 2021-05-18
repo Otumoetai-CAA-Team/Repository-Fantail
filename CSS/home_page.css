@@ -5,15 +5,19 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 /* ----- Nav Bar Styling ----- */
 .header {
   overflow: hidden;
   background-color: #005151;
+  height: 50px;
   padding: 20px 10px;
-  top: 0%;
   border-radius: 10px;
+  top: 0;
+  bottom: 0;
+  margin: 0;
 }
 
 /* ---- Text Styling for Nav Bar ---- */
@@ -23,7 +27,7 @@ html {
   text-align: center;
   padding: 12px;
   text-decoration: none;
-  font-size: 125%; 
+  font-size: 125vw; 
   line-height: 25px;
   border-radius: 4px;
   font-family: 'Work Sans', sans-serif;
@@ -84,41 +88,48 @@ body {
 }
 
 /* ----- Header and button container styling -----*/
-.text-block {
+.grid-container {
+  padding-top: 0.5%;
   position: relative;
   margin: auto;
-  padding-left: 20px;
+  /* padding-left: 20px;
   padding-right: 20px;
-  border-radius: 50px;
+  border-radius: 50px; */
   
 }
 
 /* ----- Button Styling ----- */
-.container .text-block .buttons{
+.container .grid-container .buttons{
   color: #F9F1F1;
   background-color: #2D5181;
-  font-size: 150%;
+  font-size: 2vw;
   font-family: 'Work Sans';
   border-radius: 50px;
   transition-duration: 0.3s;
   cursor: pointer;
   padding: 3%;
-  width: 50vw;
+  width: 30vw;
 }
 
 /* ----- Hover Effect on Buttons ----- */
-.container .text-block .buttons:hover{
+.container .grid-container .buttons:hover{
   background-color: #7094B4;
   color: #F9F1F1;
-  font-size: 1.5vw;
+  font-size: 1.95vw;
   border-color: #003D52;
-  transform: rotate(360);
+
 }
 
 /* ----- Spacing between middle button ----- */
 #button_W {
   margin-top: 1%;
   margin-bottom: 1%;
+}
+
+/* grid styling to space buttons out a */
+.grid-container{
+  display: grid;
+  grid-template-columns: auto;
 }
 
 /* ----- Title Styling ----- */
@@ -131,3 +142,4 @@ h1 {
   margin-left: 1vw;
   margin-right: 1vw;
 }
+
