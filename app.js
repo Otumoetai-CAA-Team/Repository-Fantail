@@ -6,8 +6,7 @@ var path = require('path');
 
 var MongoClient = require('mongodb').MongoClient;
 const { table } = require('console');
-const uri = "mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/test";
-
+const uri = process.env.MONGODB_URI;
 const app = express();
 app.use(express.static(path.join(__dirname, '/')));
 
@@ -37,6 +36,10 @@ MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
         res.render('home_page', {data, data})
     });
 });
+
+// app.get('/', function(req, res){
+//     res.render('home_page')
+// });
 
 app.get('/education', function(req, res){
 
