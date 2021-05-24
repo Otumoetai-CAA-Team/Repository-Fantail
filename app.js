@@ -37,9 +37,6 @@ MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
     });
 });
 
-// app.get('/', function(req, res){
-//     res.render('home_page')
-// });
 
 app.get('/education', function(req, res){
 
