@@ -30,7 +30,7 @@ MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
       {track: 1, _id:0}
    ).forEach(function(myDocument) {
       table_names.push(myDocument.data);
-      console.log(myDocument.data)
+      //console.log(myDocument.data)
       //console.log(table_names);
       return table_names
    });
@@ -42,64 +42,33 @@ MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
 
 
 
-    app.get('/', function(req, res){
-        res.render('home_page', {data, data})
-    });
-
-
+app.get('/', function(req, res){
+    res.render('home_page', {data, data})
+})
 
 app.get('/education', function(req, res){
-
-    fs.readFile('./HTML/education.html', (err, data_education) =>{
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf8'});
-        res.write(data_education, 'utf8')
-        res.end();
-    
-});
+    res.render('education', {data, data})
 })
 
 app.get('/writing', function(req, res){
 
-    fs.readFile('./HTML/writing.html', (err, data_writing) =>{
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf8'});
-        res.write(data_writing, 'utf8')
-        res.end();
-    
-});
+    res.render('writing', {data, data})  
 })
 
-
-
 app.get('/meditation', function(req, res){
-    fs.readFile('./HTML/meditation.html', (err, data_med) =>{
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf8'});
-        res.write(data_med, 'utf8')
-        res.end()
-    })
+    res.render('meditation', {data, data})
 })
 
 app.get('/about', function(req, res){
-    fs.readFile('./HTML/about.html', (err, data_about) =>{
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf8'});
-        res.write(data_about, 'utf8')
-        res.end()
-    })
+    res.render('about', {data, data})
 })
 
 app.get('/contact', function(req, res){
-    fs.readFile('./HTML/contact.html', (err, data_contact) =>{
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf8'});
-        res.write(data_contact, 'utf8')
-        res.end()
-    })
+    res.render('contact', {data, data})
 })
 
 app.get('/support', function(req, res){
-    fs.readFile('./HTML/support.html', (err, data_support) =>{
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf8'});
-        res.write(data_support, 'utf8')
-        res.end()
-    })
+    res.render('support', {data, data})
 })
 
 app.listen(process.env.PORT || 5050, ()=>{
