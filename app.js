@@ -16,30 +16,36 @@ app.use(express.static(path.join(__dirname, '/')));
 
 app.set('view engine', 'ejs')
 
+
 table_names = []
-
 MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
+    
     if (err) throw err;
-    var dbo = db.db("mydb");
+    var dbo = db.db("writing_db");
 
-    var query = { Age: "18" };
+    var query = { type: 'writing' };
 
-    dbo.collection("mydbcollect").find(
+    dbo.collection("writing_cl").find(
       query,
-      {User: 1, _id:0}
+      {track: 1, _id:0}
    ).forEach(function(myDocument) {
-      console.log(myDocument.User);
-      table_names.push(myDocument.User);
-      console.log(table_names);
+      table_names.push(myDocument.data);
+      console.log(myDocument.data)
+      //console.log(table_names);
+      return table_names
    });
-      
+    console.log(table_names);
     var data = {name: table_names}
+    
+    
 
-    console.log(data)
+
+
+
     app.get('/', function(req, res){
         res.render('home_page', {data, data})
     });
-});
+
 
 
 app.get('/education', function(req, res){
@@ -88,7 +94,15 @@ app.get('/contact', function(req, res){
     })
 })
 
+app.get('/support', function(req, res){
+    fs.readFile('./HTML/support.html', (err, data_support) =>{
+        res.writeHead(200, {'Content-Type': 'text/html; charset=utf8'});
+        res.write(data_support, 'utf8')
+        res.end()
+    })
+})
+
 app.listen(process.env.PORT || 5050, ()=>{
     console.log('Server running on port 5050')
 })
-
+});
