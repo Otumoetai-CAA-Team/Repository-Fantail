@@ -18,24 +18,37 @@ app.set('view engine', 'ejs')
 
 
 table_names = []
+track_names = []
 MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
     
     if (err) throw err;
     var dbo = db.db("writing_db");
 
-    var query = { type: 'writing' };
-
+    var query = { "type": 'writing', "track": "track 1"};
     dbo.collection("writing_cl").find(
       query,
-      {track: 1, _id:0}
+      { _id:0}
    ).forEach(function(myDocument) {
       table_names.push(myDocument.data);
-      //console.log(myDocument.data)
-      //console.log(table_names);
-      return table_names
+      console.log(table_names)
+      
    });
-    console.log(table_names);
-    var data = {name: table_names}
+
+   var query = { "type": 'writing', "track": "track 1"};
+   dbo.collection("writing_cl").find(
+     query,
+     { _id:0}
+  ).forEach(function(myDocument) {
+    track_names.push(myDocument.track);
+     console.log(track_names)
+     
+  });
+   
+
+    
+   
+   var data = {name: table_names,
+              track: track_names}
     
     
 
@@ -69,6 +82,10 @@ app.get('/contact', function(req, res){
 
 app.get('/support', function(req, res){
     res.render('support', {data, data})
+})
+
+app.get('/meditation/track1', function(req, res){
+    res.render('mtrack1', {data, data})
 })
 
 app.listen(process.env.PORT || 5050, ()=>{
