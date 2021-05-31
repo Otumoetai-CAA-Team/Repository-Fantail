@@ -6,85 +6,89 @@ var path = require('path');
 
 var MongoClient = require('mongodb').MongoClient;
 const { table } = require('console');
-const uri = "mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/test";
+
+
+const uri = process.env.MONGODB_URI || "mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/test";
+//const uri = process.env.MONGODB_URI;
 
 const app = express();
 app.use(express.static(path.join(__dirname, '/')));
 
 app.set('view engine', 'ejs')
 
+
 table_names = []
-
+track_names = []
 MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
+    
     if (err) throw err;
-    var dbo = db.db("mydb");
+    var dbo = db.db("writing_db");
 
-    var query = { Age: "18" };
-
-    dbo.collection("mydbcollect").find(
+    var query = { "type": 'writing', "track": "track 1"};
+    dbo.collection("writing_cl").find(
       query,
-      {User: 1, _id:0}
+      { _id:0}
    ).forEach(function(myDocument) {
-      console.log(myDocument.User);
-      table_names.push(myDocument.User);
-      console.log(table_names);
-   });
+      table_names.push(myDocument.data);
+      console.log(table_names)
       
-    var data = {name: table_names}
+   });
 
-    console.log(data)
-    app.get('/', function(req, res){
-        res.render('home_page', {data, data})
-    });
-});
+   var query = { "type": 'writing', "track": "track 1"};
+   dbo.collection("writing_cl").find(
+     query,
+     { _id:0}
+  ).forEach(function(myDocument) {
+    track_names.push(myDocument.track);
+     console.log(track_names)
+     
+  });
+   
+
+    
+   
+   var data = {name: table_names,
+              track: track_names}
+    
+    
+
+
+
+
+app.get('/', function(req, res){
+    res.render('home_page', {data, data})
+})
 
 app.get('/education', function(req, res){
-
-    fs.readFile('./HTML/education.html', (err, data_education) =>{
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf8'});
-        res.write(data_education, 'utf8')
-        res.end();
-    
-});
+    res.render('education', {data, data})
 })
 
 app.get('/writing', function(req, res){
 
-    fs.readFile('./HTML/writing.html', (err, data_writing) =>{
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf8'});
-        res.write(data_writing, 'utf8')
-        res.end();
-    
-});
+    res.render('writing', {data, data})  
 })
 
-
-
 app.get('/meditation', function(req, res){
-    fs.readFile('./HTML/meditation.html', (err, data_med) =>{
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf8'});
-        res.write(data_med, 'utf8')
-        res.end()
-    })
+    res.render('meditation', {data, data})
 })
 
 app.get('/about', function(req, res){
-    fs.readFile('./HTML/about.html', (err, data_about) =>{
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf8'});
-        res.write(data_about, 'utf8')
-        res.end()
-    })
+    res.render('about', {data, data})
 })
 
 app.get('/contact', function(req, res){
-    fs.readFile('./HTML/contact.html', (err, data_contact) =>{
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf8'});
-        res.write(data_contact, 'utf8')
-        res.end()
-    })
+    res.render('contact', {data, data})
+})
+
+app.get('/support', function(req, res){
+    res.render('support', {data, data})
+})
+
+app.get('/meditation/track1', function(req, res){
+    res.render('mtrack1', {data, data})
 })
 
 app.listen(process.env.PORT || 5050, ()=>{
     console.log('Server running on port 5050')
 })
-
+});

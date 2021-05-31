@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+    <script type='text/javascript' src='app.js'></script>
+    <head>
+        <link rel="stylesheet" href="/CSS/meditation.css">
+        <script src=page_2.js>
+        </script>
+        <title>Meditation</title>
+    </head>
+    <script>
+
+        function vistPage_About(){
+                    window.location="/about"
+        }
+        function vistPage_Contact(){
+            window.location="/contact"
+        }
+        function vistPage_Home(){
+            window.location="/"
+        }
+        function vistPage_Med_track1(){
+            window.location="/meditation/track1"
+        }
+        </script>
+        
+            <ul class="topnav">
+                <li><a class="active" onclick="vistPage_Home()">Home</a></li>
+                <li><a>Support</a></li>
+                <li><a onclick="vistPage_Contact()">Contact</a></li>
+                <li class="right"><a onclick="vistPage_About()">About</a></li>
+              </ul>
+        
+            <body>
+            
+                    </div>
+                    <h2>
+                    Welcome to <%=data.track[0]%> </br>
+                    <%=data.name[0]%>
+                       
+                    </h2>
+                </div>
+            </body>
+        </html>
