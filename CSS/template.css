@@ -1,1 +1,128 @@
+p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #005151;
+    font-size: x-large;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 50px;
+    position: sticky;
+    top: 0;
+  
+  }
+  
+  ul.topnav li {float: left;}
+  
+  ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  ul.topnav li a:hover:not(.active) {background-color: #111;}
+  
+  ul.topnav li a.active {background-color: #37BE64;}
+  
+  ul.topnav li.right {float: right;}
+  
+  @media screen and (max-width: 600px) {
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+  }
+
+.parallax {
+    /* The image used */
+    background-color: cadetblue;
+
+    /* Set a specific height */
+    min-height: 100%;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+
+    /* Text centring */
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 5em;
+
+    
+  }
+.layer_1 {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #E0C1B3;
+    height: 100vh;
+}
+
+.container h1 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container .grid-container {
+    padding-top: 0.5%;
+    position: relative;
+    margin: auto;
+}
+
+.grid_item {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* ----- Header and button container styling -----*/
+  
+  /* ----- Button Styling ----- */
+  .container .grid-container .buttons{
+    color: #F9F1F1;
+    background-color: #2D5181;
+    font-size: 2vw;
+    font-family: 'Work Sans';
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    padding: 3%;
+    width: 30vw;
+  }
+  
+  /* ----- Hover Effect on Buttons ----- */
+  .container .grid-container .buttons:hover{
+    background-color: #7094B4;
+    color: #F9F1F1;
+    font-size: 1.95vw;
+    border-color: #003D52;
+  
+  }
+  
+  /* ----- Spacing between middle button ----- */
+  #button_W {
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+  
+  /* grid styling to space buttons out a */
+  .grid-container{
+    display: grid;
+    grid-template-columns: auto;
+  }
+  
+  /* ----- Title Styling ----- */
+  h1 {
+    color:#F9F1F1;
+    font-family: 'Work Sans';
+    font-size: 10vw;
+    font-weight: 10%;
+    margin: 0.5vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+
 
