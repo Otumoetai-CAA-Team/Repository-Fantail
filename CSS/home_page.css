@@ -1,11 +1,33 @@
-/* ----- Background Image Styling ----- */
-html { 
-  background: url(/Images/bady-abbas-MDgRcuGYu58-unsplash.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.parallax {
+  /* The image used */
+  background-image: linear-gradient(red, orange);
+
+  /* Set a specific height */
+  min-height: 100vh; 
+
+  /* Create the parallax scrolling effect */
   background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.layer_1 {
+  background-color: #2D5181;
+  background-size: cover;
+  height: 100vh;
+}
+.parallax h1 {
+  /* Text styling */
+  color:#F9F1F1;
+  font-family: 'Work Sans';
+  font-size: 10vw;
+  font-weight: 10%;
+
+  /* Text placement */
+  text-align: center;
+  line-height: 100vh;
+  margin: 0;
 }
 
 ul.topnav {
@@ -54,10 +76,6 @@ body {
   padding-top: 0.5%;
   position: relative;
   margin: auto;
-  /* padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 50px; */
-  
 }
 
 /* ----- Button Styling ----- */
@@ -93,15 +111,3 @@ body {
   display: grid;
   grid-template-columns: auto;
 }
-
-/* ----- Title Styling ----- */
-h1 {
-  color:#F9F1F1;
-  font-family: 'Work Sans';
-  font-size: 10vw;
-  font-weight: 10%;
-  margin: 0.5vw;
-  margin-left: 1vw;
-  margin-right: 1vw;
-}
-
