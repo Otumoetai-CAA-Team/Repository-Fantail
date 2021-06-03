@@ -38,7 +38,8 @@ ul.topnav {
   background-color: #005151;
   font-size: x-large;
   font-family: 'Courier New', Courier, monospace;
-  border-radius: 50px;
+  position: sticky;
+  top: 0;
 
 }
 
