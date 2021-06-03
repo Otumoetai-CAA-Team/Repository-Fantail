@@ -13,7 +13,7 @@
 }
 
 .layer_1 {
-  background-color: #2D5181;
+  background-color: #f9d1d4;
   background-size: cover;
   height: 110vh;
 }
@@ -22,7 +22,7 @@
   color:#F58F96;
   font-family: 'Work Sans';
   font-size: 15vw;
-  font-weight: 10%;
+  font-style: normal;
 
   /* Text placement */
   text-align: center;
@@ -74,30 +74,31 @@ body {
 
 /* ----- Header and button container styling -----*/
 .grid-container {
-  padding-top: 0.5%;
-  position: relative;
+  padding: 10%;
+  position: static;
   margin: auto;
 }
 
 /* ----- Button Styling ----- */
 .container .grid-container .buttons{
-  color: #F9F1F1;
-  background-color: #2D5181;
-  font-size: 2vw;
+  color: #130601;
+  background-color: #D1F9F6;
+  font-size: 2em;
   font-family: 'Work Sans';
-  border-radius: 50px;
+  border-radius: 100px;
   transition-duration: 0.3s;
   cursor: pointer;
   padding: 3%;
   width: 30vw;
+  border: 0;
 }
 
 /* ----- Hover Effect on Buttons ----- */
 .container .grid-container .buttons:hover{
-  background-color: #7094B4;
+  background-color: #FB9C74;
   color: #F9F1F1;
-  font-size: 1.95vw;
-  border-color: #003D52;
+  font-size: 2.1em;
+
 
 }
 
