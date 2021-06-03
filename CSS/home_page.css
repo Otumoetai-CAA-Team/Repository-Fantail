@@ -1,6 +1,6 @@
 .parallax {
   /* The image used */
-  background-image: url("/Images/bady-abbas-MDgRcuGYu58-unsplash.jpg");
+  background-image: url("/Images/davies-designs-studio-_UCVrH-ZIIg-unsplash.jpg");
 
   /* Set a specific height */
   min-height: 100vh; 
@@ -19,9 +19,9 @@
 }
 .parallax h1 {
   /* Text styling */
-  color:#F9F1F1;
+  color:#F58F96;
   font-family: 'Work Sans';
-  font-size: 10vw;
+  font-size: 15vw;
   font-weight: 10%;
 
   /* Text placement */
