@@ -1,6 +1,6 @@
 .parallax {
   /* The image used */
-  background-image: linear-gradient(red, orange);
+  background-image: url("/Images/bady-abbas-MDgRcuGYu58-unsplash.jpg");
 
   /* Set a specific height */
   min-height: 100vh; 
@@ -15,7 +15,7 @@
 .layer_1 {
   background-color: #2D5181;
   background-size: cover;
-  height: 100vh;
+  height: 110vh;
 }
 .parallax h1 {
   /* Text styling */
