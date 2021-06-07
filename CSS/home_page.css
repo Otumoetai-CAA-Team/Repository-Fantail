@@ -28,6 +28,10 @@
   text-align: center;
   line-height: 100vh;
   margin: 0;
+
+  background-attachment: local;
+  
+  
 }
 
 ul.topnav {
@@ -76,14 +80,14 @@ body {
 .grid-container {
   padding: 10%;
   position: static;
-  margin: auto;
+  margin: 10vh;
 }
 
 /* ----- Button Styling ----- */
 .container .grid-container .buttons{
   color: #130601;
   background-color: #D1F9F6;
-  font-size: 2em;
+  font-size: 2vw;
   font-family: 'Work Sans';
   border-radius: 100px;
   transition-duration: 0.3s;
@@ -97,7 +101,7 @@ body {
 .container .grid-container .buttons:hover{
   background-color: #FB9C74;
   color: #F9F1F1;
-  font-size: 2.1em;
+  font-size: 2.1vw;
 
 
 }
@@ -106,6 +110,7 @@ body {
 #button_W {
   margin-top: 1%;
   margin-bottom: 1%;
+  margin: 4vh;
 }
 
 /* grid styling to space buttons out a */
