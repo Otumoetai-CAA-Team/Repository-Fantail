@@ -1,11 +1,37 @@
-/* ----- Background Image Styling ----- */
-html { 
-  background: url(/Images/bady-abbas-MDgRcuGYu58-unsplash.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.parallax {
+  /* The image used */
+  background-image: url("/Images/davies-designs-studio-_UCVrH-ZIIg-unsplash.jpg");
+
+  /* Set a specific height */
+  min-height: 100vh; 
+
+  /* Create the parallax scrolling effect */
   background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.layer_1 {
+  background-color: #f9d1d4;
+  background-size: cover;
+  height: 110vh;
+}
+.parallax h1 {
+  /* Text styling */
+  color:#F58F96;
+  font-family: 'Work Sans';
+  font-size: 15vw;
+  font-style: normal;
+
+  /* Text placement */
+  text-align: center;
+  line-height: 100vh;
+  margin: 0;
+
+  background-attachment: local;
+  
+  
 }
 
 ul.topnav {
@@ -16,7 +42,8 @@ ul.topnav {
   background-color: #005151;
   font-size: x-large;
   font-family: 'Courier New', Courier, monospace;
-  border-radius: 50px;
+  position: sticky;
+  top: 0;
 
 }
 
@@ -51,34 +78,31 @@ body {
 
 /* ----- Header and button container styling -----*/
 .grid-container {
-  padding-top: 0.5%;
-  position: relative;
-  margin: auto;
-  /* padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 50px; */
-  
+  padding: 10%;
+  position: static;
+  margin: 10vh;
 }
 
 /* ----- Button Styling ----- */
 .container .grid-container .buttons{
-  color: #F9F1F1;
-  background-color: #2D5181;
+  color: #130601;
+  background-color: #D1F9F6;
   font-size: 2vw;
   font-family: 'Work Sans';
-  border-radius: 50px;
+  border-radius: 100px;
   transition-duration: 0.3s;
   cursor: pointer;
   padding: 3%;
   width: 30vw;
+  border: 0;
 }
 
 /* ----- Hover Effect on Buttons ----- */
 .container .grid-container .buttons:hover{
-  background-color: #7094B4;
+  background-color: #FB9C74;
   color: #F9F1F1;
-  font-size: 1.95vw;
-  border-color: #003D52;
+  font-size: 2.1vw;
+
 
 }
 
@@ -86,6 +110,7 @@ body {
 #button_W {
   margin-top: 1%;
   margin-bottom: 1%;
+  margin: 4vh;
 }
 
 /* grid styling to space buttons out a */
@@ -93,15 +118,3 @@ body {
   display: grid;
   grid-template-columns: auto;
 }
-
-/* ----- Title Styling ----- */
-h1 {
-  color:#F9F1F1;
-  font-family: 'Work Sans';
-  font-size: 10vw;
-  font-weight: 10%;
-  margin: 0.5vw;
-  margin-left: 1vw;
-  margin-right: 1vw;
-}
-
