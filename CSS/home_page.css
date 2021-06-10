@@ -1,3 +1,8 @@
+.navbar {
+  margin: auto;
+  padding: 0;
+}
+
 .parallax {
   /* The image used */
   background-image: url("/Images/davies-designs-studio-_UCVrH-ZIIg-unsplash.jpg");
@@ -10,13 +15,16 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  
 }
 
-.layer_1 {
+.layer-1 {
   background-color: #f9d1d4;
   background-size: cover;
   height: 110vh;
+  padding-top: 0;
 }
+
 .parallax h1 {
   /* Text styling */
   color:#F58F96;
@@ -27,7 +35,6 @@
   /* Text placement */
   text-align: center;
   line-height: 100vh;
-  margin: 0;
 
   background-attachment: local;
   
@@ -107,7 +114,7 @@ body {
 }
 
 /* ----- Spacing between middle button ----- */
-#button_W {
+#button-W {
   margin-top: 1%;
   margin-bottom: 1%;
   margin: 4vh;
