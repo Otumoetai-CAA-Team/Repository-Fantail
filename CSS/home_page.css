@@ -20,7 +20,7 @@
 .parallax h1 {
   /* Text styling */
   color:#F58F96;
-  font-family: 'Work Sans';
+  font-family: 'Work Sans', 'Courier New', Courier, monospace;
   font-size: 15vw;
   font-style: normal;
 
@@ -41,7 +41,7 @@ ul.topnav {
   overflow: hidden;
   background-color: #005151;
   font-size: x-large;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Work Sans', 'Courier New', Courier, monospace;
   position: sticky;
   top: 0;
 
@@ -72,7 +72,7 @@ ul.topnav li.right {float: right;}
 body {
   max-width: 100%;
   height: auto;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Work Sans', 'Courier New', Courier, monospace;
   text-align: center;
 }
 
