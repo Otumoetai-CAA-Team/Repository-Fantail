@@ -7,7 +7,7 @@ const GridFsStorage = require('multer-gridfs-storage')
 const Grid = require('gridfs-stream')
 const methodOveride = require('method-override')
 const bodyParser = require('body-parser')
-
+const config = require('./config');
 const upload = express();
 
 // Middleware
