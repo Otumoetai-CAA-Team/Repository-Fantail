@@ -5,7 +5,8 @@ const crypto = require('crypto');
 const mongoose = require('mongoose')
 const GridFsStorage = require('multer-gridfs-storage')
 const Grid = require('gridfs-stream')
-const methodOveride = require('method-overide')
+const methodOveride = require('method-override')
+const bodyParser = require('body-parser')
 
 const upload = express();
 
@@ -49,7 +50,7 @@ const storage = new GridFsStorage({
     }
 });
 
-const upload = multer({ storage });
+//const upload = multer({ storage });
 
 // @route GET /
 // @desc Loads form
