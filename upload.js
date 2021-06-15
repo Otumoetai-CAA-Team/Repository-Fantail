@@ -6,17 +6,24 @@ const mongoose = require('mongoose')
 const GridFsStorage = require('multer-gridfs-storage')
 const Grid = require('gridfs-stream')
 const methodOveride = require('method-override')
-const bodyParser = require('body-parser')
-const config = require('./config');
+//const bodyParser = require('body-parser')
+// was this before: const config = require('./config');
+//const config = require('./config');
 const upload = express();
 
 // Middleware
-upload.use(bodyParser.json());
+// Now Node has a built in version of bodyparser
+//upload.use(bodyParser.json());
+upload.use(express.json()); //Used to parse JSON bodies
 upload.use(methodOveride('_method'));
 upload.set('view engine', 'ejs');
 
 // Mongo URI
-const mongoURI= 'mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/amy';
+const mongoURI= 'mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/test';
+
+// 'mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net'
+
+
 
 // Create mongo connection
 const conn = mongoose.createConnection(mongoURI);
@@ -32,7 +39,7 @@ conn.once('open', () => {
 
 // Create storage engine
 const storage = new GridFsStorage({
-    url: config.mongoURI,
+    url: 'mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/test',
     file: (req, file) => {
         return new Promise((resolve, reject) => {
             crypto.randomBytes(16, (err, buf) => {
