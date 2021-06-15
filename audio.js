@@ -6,7 +6,7 @@ const mongodb = require('mongodb');
 var MongoClient = require('mongodb').MongoClient;
 
 var audio = express();
-const uri = "mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/audioDB?retryWrites=true&w=majority";
+const uri = "mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/CountdownDB?retryWrites=true&w=majority";
 
 
  MongoClient.connect(uri, { useUnifiedTopology: true }, (err, database) => {
@@ -14,7 +14,7 @@ const uri = "mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.ne
      console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
      process.exit(1);
    }
-   var dbo = database.db("audioDB");
+   var dbo = database.db("CountdownDB");
  
 
 
@@ -26,7 +26,7 @@ audio.get('/tracks', (req, res) => {
   res.set('accept-ranges', 'bytes');
 
   let bucket = new mongodb.GridFSBucket(dbo);
-  let downloadStream =  bucket.openDownloadStreamByName('typewriter-sound.mp3');
+  let downloadStream =  bucket.openDownloadStreamByName('CountdownSoundJS.mp3');
 
   downloadStream.on('data', (chunk) => {
     res.write(chunk);
