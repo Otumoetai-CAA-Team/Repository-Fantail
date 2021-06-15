@@ -5,7 +5,7 @@ ul.topnav {
   overflow: hidden;
   background-color: #005151;
   font-size: x-large;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Work Sans', 'Courier New', Courier, monospace;
   border-radius: 50px;
 
 }
@@ -32,7 +32,7 @@ ul.topnav li.right {float: right;}
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Work Sans', 'Courier New', Courier, monospace;
 }
 
 .p1{
@@ -45,7 +45,7 @@ body {
   padding: 10px;
   display: grid;
   align-content: center;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
   
 }
@@ -58,11 +58,15 @@ body {
 }
 
 .item1{
-  grid-column:  1 / 5;
+  grid-column:  1/4;
 }
 
+.item2 {
+  grid-column: 1/4 ;
+  font-family: 'Work Sans', 'Courier New', Courier, monospace;
+}
 
-.grid-container .item2 .card {
+.grid-container .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
   margin: auto;
@@ -70,12 +74,12 @@ body {
   font-family: arial;
 }
 
-.grid-container .item2 .title {
+.grid-container.title {
   color: grey;
   font-size: 18px;
 }
 
-.grid-container .item2 button {
+.grid-container button {
   border: none;
   outline: 0;
   display: inline-block;
@@ -88,12 +92,12 @@ body {
   font-size: 18px;
 }
 
-.grid-container .item2 a {
+.grid-container a {
   text-decoration: none;
   font-size: 22px;
   color: black;
 }
 
-.grid-container .item2 button:hover, a:hover {
+.grid-container button:hover, a:hover {
   opacity: 0.7;
 }
