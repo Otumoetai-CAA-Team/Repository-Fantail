@@ -1,4 +1,19 @@
-.navbar {
+.grid-container-1 {
+  display: inline-grid;
+  grid-template-columns: 1fr;
+  background-color: #D1F9F6;
+}
+
+.grid-item {  
+  font-size: 100px;
+  width: 100vmax;
+  height: 30vh;
+  border-style: dotted;
+  
+
+}
+
+.grid-container-1 .navbar {
   margin: auto;
   padding: 0;
 }
@@ -41,7 +56,7 @@
   
 }
 
-ul.topnav {
+.grid-container-1 ul.topnav {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -54,9 +69,9 @@ ul.topnav {
 
 }
 
-ul.topnav li {float: left;}
+.grid-container-1 .topnav li {float: left;}
 
-ul.topnav li a {
+.grid-container-1 ul.topnav li a {
   display: block;
   color: white;
   text-align: center;
@@ -64,15 +79,15 @@ ul.topnav li a {
   text-decoration: none;
 }
 
-ul.topnav li a:hover:not(.active) {background-color: #111;}
+.grid-container-1 .topnav li a:hover:not(.active) {background-color: #111;}
 
-ul.topnav li a.active {background-color: #37BE64;}
+.grid-container-1 .topnav li a.active {background-color: #37BE64;}
 
-ul.topnav li.right {float: right;}
+.grid-container-1 .topnav li.right {float: right;}
 
 @media screen and (max-width: 600px) {
-  ul.topnav li.right, 
-  ul.topnav li {float: none;}
+  .grid-container-1 .topnav li.right, 
+  .grid-container-1 .topnav li {float: none;}
 }
 
 /* ----- Body Styling ----- */
@@ -84,14 +99,14 @@ body {
 }
 
 /* ----- Header and button container styling -----*/
-.grid-container {
+.grid-container-2 {
   padding: 10%;
   position: static;
   margin: 10vh;
 }
 
 /* ----- Button Styling ----- */
-.container .grid-container .buttons{
+.container .grid-container-2 .buttons{
   color: #130601;
   background-color: #D1F9F6;
   font-size: 2vw;
@@ -105,7 +120,7 @@ body {
 }
 
 /* ----- Hover Effect on Buttons ----- */
-.container .grid-container .buttons:hover{
+.container .grid-container-2 .buttons:hover{
   background-color: #FB9C74;
   color: #F9F1F1;
   font-size: 2.1vw;
@@ -121,7 +136,7 @@ body {
 }
 
 /* grid styling to space buttons out a */
-.grid-container{
+.grid-container-2{
   display: grid;
   grid-template-columns: auto;
 }
