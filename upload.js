@@ -1,6 +1,8 @@
+// import modules
 const express = require('express');
 const path = require('path');
 const multer = require('multer');
+//crypto is deprecated now, so should switch to built in package
 const crypto = require('crypto');
 const mongoose = require('mongoose')
 const GridFsStorage = require('multer-gridfs-storage')
@@ -19,14 +21,14 @@ upload.use(methodOveride('_method'));
 upload.set('view engine', 'ejs');
 
 // Mongo URI
-const mongoURI= 'mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/test';
+const mongoURI= ('mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/test');
 
 // 'mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net'
 
 
 
 // Create mongo connection
-const conn = mongoose.createConnection(mongoURI);
+const conn = mongoose.createConnection(mongoURI, {useNewUrlParser: true});
 
 // Init gfs
 let gfs;
@@ -39,25 +41,30 @@ conn.once('open', () => {
 
 // Create storage engine
 const storage = new GridFsStorage({
-    url: 'mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/test',
+    url: mongoURI,
     file: (req, file) => {
+        // returns promise
         return new Promise((resolve, reject) => {
             crypto.randomBytes(16, (err, buf) => {
+                // if error throw error
                 if (err) {
                     return reject(err);
                 }
+                // no error, create new file
                 const filename = buf.toString('hex') + path.extname(file.originalname);
                 const fileInfo = {
                     filename: filename,
                     bucketName: 'uploads'
                 };
+                // resolve promise
                 resolve(fileInfo);
             });
         });
     }
 });
 
-//const upload = multer({ storage });
+// var uploader to pass in storage engine, allows us to make post route
+const uploader = multer({ storage });
 
 // @route GET /
 // @desc Loads form
@@ -66,7 +73,8 @@ upload.get('/', (req, res) => {
 });
 
 // @route POST /
-upload.post('upload', upload.single('file'), (req, res) => {
+// this uploads file to db
+upload.post('/uploader', uploader.single('file'), (req, res) => {
     res.json({file: req.file});
 
 });
