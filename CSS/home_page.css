@@ -1,45 +1,10 @@
-.parallax {
-  /* The image used */
-  background-image: url("/Images/davies-designs-studio-_UCVrH-ZIIg-unsplash.jpg");
-
-  /* Set a specific height */
-  min-height: 100vh; 
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.layer_1 {
-  background-color: #f9d1d4;
-  background-size: cover;
-  height: 110vh;
-}
-.parallax h1 {
-  /* Text styling */
-  color:#F58F96;
-  font-family: 'Work Sans', 'Courier New', Courier, monospace;
-  font-size: 15vw;
-  font-style: normal;
-
-  /* Text placement */
-  text-align: center;
-  line-height: 100vh;
-  margin: 0;
-
-  background-attachment: local;
-  
-  
-}
-
 ul.topnav {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #005151;
+  background-attachment: fixed;
   font-size: x-large;
   font-family: 'Work Sans', 'Courier New', Courier, monospace;
   position: sticky;
@@ -68,23 +33,64 @@ ul.topnav li.right {float: right;}
   ul.topnav li {float: none;}
 }
 
+.parallax-background {
+  /* The image used */
+  background-image: url("/Images/davies-designs-studio-_UCVrH-ZIIg-unsplash.jpg");
+
+  /* Set a specific height */
+  min-height: 100vh; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.layer_1 {
+  background-color: #f9d1d4;
+  background-size: cover;
+  height: 110vh;
+  position: relative;
+}
+.parallax-background h1 {
+  /* Text styling */
+  color:#F58F96;
+  font-family: 'Work Sans', 'Courier New', Courier, monospace;
+  font-size: 15vw;
+  font-style: normal;
+
+  /* Text placement */
+  text-align: center;
+  line-height: 100vh;
+  margin: 0;
+
+  background-attachment: local;
+  
+  
+}
+
+
+
 /* ----- Body Styling ----- */
 body {
   max-width: 100%;
   height: auto;
   font-family: 'Work Sans', 'Courier New', Courier, monospace;
   text-align: center;
+  margin: 0;
 }
 
 /* ----- Header and button container styling -----*/
 .grid-container {
-  padding: 10%;
-  position: static;
-  margin: 10vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* ----- Button Styling ----- */
-.container .grid-container .buttons{
+.grid-container .buttons{
   color: #130601;
   background-color: #D1F9F6;
   font-size: 2vw;
@@ -98,7 +104,7 @@ body {
 }
 
 /* ----- Hover Effect on Buttons ----- */
-.container .grid-container .buttons:hover{
+.grid-container .buttons:hover{
   background-color: #FB9C74;
   color: #F9F1F1;
   font-size: 2.1vw;
