@@ -28,15 +28,16 @@ const mongoURI= ('mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongo
 
 
 // Create mongo connection
-const conn = mongoose.createConnection(mongoURI, {useNewUrlParser: true});
+const conn = mongoose.createConnection(mongoURI, { useUnifiedTopology: true });
 
 // Init gfs
 let gfs;
 
-conn.once('open', () => {
+conn.once('open', () => {    
     //Init stream
     gfs = Grid(conn.db, mongoose.mongo);
     gfs.collection('uploads');
+    console.log('conn successful')
 })
 
 // Create storage engine
@@ -58,6 +59,7 @@ const storage = new GridFsStorage({
                 };
                 // resolve promise
                 resolve(fileInfo);
+                console.log('promise resolved')
             });
         });
     }
