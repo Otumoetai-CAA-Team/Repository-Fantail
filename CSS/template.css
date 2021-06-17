@@ -1,1 +1,19 @@
+.parallax {
+    /* The image used */
+    background-image: url("C:/Users/winderc/Documents/GitHub/Repository-Fantail/Images/jasper-lake.jpg");
+  
+    /* Set a specific height */
+    min-height: 500px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
+.layer_1 {
+    background-image: url("C:/Users/winderc/Documents/GitHub/Repository-Fantail/Images/bruno-van-der-kraan-6P-dSJbcvow-unsplash.jpg");
+    background-size: cover;
+    height: 1000px;
+}

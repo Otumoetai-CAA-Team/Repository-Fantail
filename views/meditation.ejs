@@ -1,7 +1,9 @@
 <!DOCTYPE HTML>
 <html>
+    <script type='text/javascript' src='app.js'></script>
     <head>
         <link rel="stylesheet" href="/CSS/meditation.css">
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
         <script src=page_2.js>
         </script>
         <title>Meditation</title>
@@ -17,6 +19,9 @@
         function vistPage_Home(){
             window.location="/"
         }
+        function vistPage_Med_track1(){
+            window.location="/meditation/track1"
+        }
         </script>
         
             <ul class="topnav">
@@ -29,6 +34,11 @@
             <body>
             
                     </div>
+                    <h2>
+                        This is mediation 
+                       <button id="button_M" class="buttons" onclick="vistPage_Med_track1()"><%=data.track[0]%></button>
+                       
+                    </h2>
                 </div>
             </body>
         </html>

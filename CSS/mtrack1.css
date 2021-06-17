@@ -5,7 +5,7 @@ ul.topnav {
     overflow: hidden;
     background-color: #005151;
     font-size: x-large;
-    font-family: 'Work Sans', 'Courier New', Courier, monospace;
+    font-family: 'Work Sans';
     margin: 0;
   
   }
@@ -30,12 +30,17 @@ ul.topnav {
     ul.topnav li.right, 
     ul.topnav li {float: none;}
   }
-
-h1 {
-  font-family: 'Work Sans', 'Courier New', Courier, monospace;
-  text-align: center;
-}
-
-body {
-  margin: 0;
-}
+  
+  body {
+      font-family: 'Work Sans','Courier New', Courier, monospace;
+      margin: 0;
+  }
+  
+  .p1
+  {
+      text-align: center;
+  }
+  
+  
+  
+  

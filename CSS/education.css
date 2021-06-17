@@ -5,8 +5,8 @@ ul.topnav {
   overflow: hidden;
   background-color: #005151;
   font-size: x-large;
-  font-family: 'Courier New', Courier, monospace;
-  border-radius: 50px;
+  font-family: 'Work Sans', 'Courier New', Courier, monospace;
+  margin: 0;
 
 }
 
@@ -32,7 +32,8 @@ ul.topnav li.right {float: right;}
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Work Sans', 'Courier New', Courier, monospace;
+    margin: 0;
 }
 
 .p1
