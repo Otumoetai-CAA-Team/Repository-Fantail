@@ -38,10 +38,12 @@ MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
       { _id:0}
    ).forEach(function(myDocument) {
       table_names.push(myDocument.data);
+      // Print array with the data type from the database in place
       console.log(table_names)
       
    });
 
+  // Querying for a datapoint with the type writing, and its track being track 1, however this time, it asks for the track variable
    var query = { "type": 'writing', "track": "track 1"};
    database.collection("writing_cl").find(
      query,
@@ -54,7 +56,7 @@ MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
    
 
     
-   
+   // Variable to hold the arrays to pass over to the ejs font-end file
    var data = {name: table_names,
               track: track_names}
     
@@ -62,7 +64,7 @@ MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
 
 
 
-
+// Setting up connections between different pages
 app.get('/', function(req, res){
     res.render('home_page', {data, data})
 })
@@ -96,6 +98,8 @@ app.get('/meditation/track1', function(req, res){
     res.render('mtrack1', {data, data})
 })
 
+
+// App listens on the port 5050 or the 'process.env.PORT' which is a port that Heroku uses to run our file
 app.listen(process.env.PORT || 5050, ()=>{
     console.log('Server running on port 5050')
 })
