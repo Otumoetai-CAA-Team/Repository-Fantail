@@ -38,13 +38,16 @@ ul.topnav li.right {float: right;}
   background-image: url("/Images/davies-designs-studio-_UCVrH-ZIIg-unsplash.jpg");
 
   /* Set a specific height */
-  min-height: 100vh; 
+  height: 100vh; 
+  margin: 0;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  text-align: center;
 }
 
 .layer_1 {
@@ -59,15 +62,12 @@ ul.topnav li.right {float: right;}
   font-family: 'Work Sans', 'Courier New', Courier, monospace;
   font-size: 15vw;
   font-style: normal;
-
-  /* Text placement */
-  text-align: center;
-  line-height: 100vh;
+  line-height: normal;
+  padding: 100px;
+  padding-top: 50vh;
+  padding-bottom: 50vh;
   margin: 0;
-
-  background-attachment: local;
-  
-  
+ 
 }
 
 

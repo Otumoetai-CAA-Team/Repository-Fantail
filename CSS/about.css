@@ -7,8 +7,6 @@ ul.topnav {
   background-color: #005151;
   font-size: x-large;
   font-family: 'Work Sans', 'Courier New', Courier, monospace;
-  border-radius: 50px;
-
 }
 
 ul.topnav li {float: left;}
@@ -58,4 +56,8 @@ h1 {
 .item1{
   grid-column-start: 1;
   grid-column-end: 4;
+}
+
+body {
+  margin: 0;
 }
