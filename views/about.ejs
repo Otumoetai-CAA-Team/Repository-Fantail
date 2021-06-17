@@ -9,7 +9,7 @@
         <title>About</title>
     </head>
     <script>
-
+        // Sets up routes to different pages from this page
         function vistPage_About(){
                     window.location="/about"
         }
@@ -19,11 +19,15 @@
         function vistPage_Home(){
             window.location="/"
         }
+        function vistPage_Support(){
+            window.location="/support"
+        }
         </script>
-
+        <!-- Buttons, when clicked will take users to that page -->
+        <!-- These buttons are in classes, so the style is conserverd -->
             <ul class="topnav">
                 <li><a class="active" onclick="vistPage_Home()">Home</a></li>
-                <li><a>Support</a></li>
+                <li><a onclick="vistPage_Support()">Support</a></li>
                 <li><a onclick="vistPage_Contact()">Contact</a></li>
                 <li class="right"><a onclick="vistPage_About()">About</a></li>
             </ul>
