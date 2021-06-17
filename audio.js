@@ -9,12 +9,12 @@ var audio = express();
 const uri = "mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/CountdownDB?retryWrites=true&w=majority";
 
 // Connecting to the database, using the audioDB to gain access to the audio files
- MongoClient.connect(uri, { useUnifiedTopology: true }, (err, database) => {
+ MongoClient.connect(uri, { useUnifiedTopology: true }, (err, db) => {
    if (err) {
      console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
      process.exit(1);
    }
-   var dbo = database.db("audioDB");
+   var database = db.db("audioDB");
  
 
 
@@ -26,7 +26,7 @@ audio.get('/tracks', (req, res) => {
   // res.set('accept-ranges', 'bytes');
 // Creating a bucket to hold the chunks from Grid.fs to then stream over to the front-end server
 // This bucket will be held in the audioDB database
-  let bucket = new mongodb.GridFSBucket(dbo);
+  let bucket = new mongodb.GridFSBucket(database);
 // Downloading the stream into the bucket of the audio file that is in the database
   let downloadStream =  bucket.openDownloadStreamByName('Gloria Gaynor I Will Survive.mp3');
 // 'Writes' the chunks of data to send to the front-end

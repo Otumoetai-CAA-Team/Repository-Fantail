@@ -9,7 +9,7 @@ ul.topnav {
   font-family: 'Work Sans', 'Courier New', Courier, monospace;
   position: sticky;
   top: 0;
-
+  z-index: 2;
 }
 
 ul.topnav li {float: left;}
@@ -20,6 +20,7 @@ ul.topnav li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  
 }
 
 ul.topnav li a:hover:not(.active) {background-color: #111;}
@@ -55,6 +56,7 @@ ul.topnav li.right {float: right;}
   background-size: cover;
   height: 110vh;
   position: relative;
+  z-index: 1;
 }
 .parallax-background h1 {
   /* Text styling */
@@ -64,7 +66,7 @@ ul.topnav li.right {float: right;}
   font-style: normal;
   line-height: normal;
   padding: 100px;
-  padding-top: 50vh;
+  padding-top: 20vh;
   padding-bottom: 50vh;
   margin: 0;
  
