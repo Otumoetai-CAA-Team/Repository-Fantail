@@ -22,8 +22,8 @@ const uri = "mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.ne
 audio.get('/tracks', (req, res) => {
 
 
-  // res.set('content-type', 'audio/mp3');
-  // res.set('accept-ranges', 'bytes');
+  res.set('content-type', 'audio/mp3');
+  res.set('accept-ranges', 'bytes');
 // Creating a bucket to hold the chunks from Grid.fs to then stream over to the front-end server
 // This bucket will be held in the audioDB database
   let bucket = new mongodb.GridFSBucket(database);
