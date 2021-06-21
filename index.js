@@ -100,7 +100,7 @@ app.get('/support', function(req, res){
 
 app.get('/meditation/track1', function(req, res){
 
-
+    
     let bucket = new mongodb.GridFSBucket(audio_Database);
     let downloadStream =  bucket.openDownloadStreamByName('Gloria Gaynor I Will Survive.mp3');
 
@@ -115,7 +115,7 @@ app.get('/meditation/track1', function(req, res){
     downloadStream.on('error', () => {
       res.sendStatus(404);
     });
-  // Ends the stream to ensure that the gates are properly closed
+  // Ends the stream to ensure that the gates are properly closed when the audi file ends
     
 
     
