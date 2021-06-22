@@ -16,19 +16,19 @@ const upload = express();
 // Middleware
 // Now Node has a built in version of bodyparser
 //upload.use(bodyParser.json());
-upload.use(express.json()); //Used to parse JSON bodies
+
 upload.use(methodOveride('_method'));
 upload.set('view engine', 'ejs');
 
 // Mongo URI
-const mongoURI= ('mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/test');
+const mongoURI= ('mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net');
 
 // 'mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net'
 
 
 
 // Create mongo connection
-const conn = mongoose.createConnection(mongoURI, { useNewUrlParser: true });
+const conn = mongoose.createConnection(mongoURI);
 
 // Init gfs
 let gfs;
@@ -41,7 +41,7 @@ conn.once('open', () => {
 })
 
 // Create storage engine
-const storage = new GridFsStorage({
+const storage = new GridFsStorage(console.log('storage engine being made, line 44'),{
     url: mongoURI,
     file: (req, file) => {
         // returns promise
@@ -49,6 +49,7 @@ const storage = new GridFsStorage({
             crypto.randomBytes(16, (err, buf) => {
                 // if error throw error
                 if (err) {
+                    console.log('error has been thrown when creating storage engine')
                     return reject(err);
                 }
                 // no error, create new file
@@ -67,20 +68,25 @@ const storage = new GridFsStorage({
 
 // var uploader to pass in storage engine, allows us to make post route
 // want const multer.Instance not multer.Multer
-const uploader = multer({ storage });
+// possibly this only works if bodyParser is used
+const uploader = multer({ storage }).single('fieldname');
 
 // @route GET /
 // @desc Loads form
 // i feel like it's failing here....
+
+upload.use(express.json()); //Used to parse JSON bodies
 upload.get('/', (req, res) => {
     // send the rendered view to the client
     res.render('index');
+    console.log('gets to line 81')
 });
 
 // @route POST /uploader
 // this uploads file to db
 upload.post('/uploader', uploader('file'), (req, res) => {
     res.json({file: req.file});
+    // this is not printing so fails before here
     console.log('is getting to this point in the upload bit')
 
 });
