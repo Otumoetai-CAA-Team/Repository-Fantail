@@ -28,21 +28,31 @@
         
         </script>
         
-            <ul class="topnav">
-                <li><a class="active" onclick="vistPage_Home()">Home</a></li>
-                <li><a onclick="vistPage_Support()">Support</a></li>
-                <li><a onclick="vistPage_Contact()">Contact</a></li>
-                <li class="right"><a onclick="vistPage_About()">About</a></li>
-              </ul>
+            
         
             <body>
+                <ul class="topnav">
+                    <li><a class="active" onclick="vistPage_Home()">Home</a></li>
+                    <li><a onclick="vistPage_Support()">Support</a></li>
+                    <li><a onclick="vistPage_Contact()">Contact</a></li>
+                    <li class="right"><a onclick="vistPage_About()">About</a></li>
+                  </ul>
+
+                <div class="container">
             
+                    <div class="item_1">
+                        <h1>Mediation</h1>
                     </div>
-                    <h2>
-                        This is mediation 
-                       <button id="button_M" class="buttons" onclick="vistPage_Med_track1()"><%=data.track[0]%></button>
-                       
-                    </h2>
+
+                    <div class="item_2">
+                        
+                    </div>
+                    <div class="item_3"></div>
+
+                    <div>
+                        <button id="button_M" class="buttons" onclick="vistPage_Med_track1()"><%=data.track[0]%></button>
+                    </div>
                 </div>
+
             </body>
         </html>

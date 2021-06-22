@@ -100,7 +100,12 @@ app.get('/support', function(req, res){
 
 app.get('/meditation/track1', function(req, res){
 
-    
+  try {
+    var trackID = new mongodb.ObjectId(req.params.trackID);
+  } catch(err) {
+    return res.status(400).json({ message: "Invalid trackID in URL parameter. Must be a single String of 12 bytes or a string of 24 hex characters" }); 
+  }  
+
     let bucket = new mongodb.GridFSBucket(audio_Database);
     let downloadStream =  bucket.openDownloadStreamByName('Gloria Gaynor I Will Survive.mp3');
 

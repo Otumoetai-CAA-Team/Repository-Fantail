@@ -36,9 +36,10 @@ body {
     margin: 0;
 }
 
-.p1
-{
-    text-align: center;
+h1 {
+  text-align: center;
+  font-size: 10vh;
+  font-family: 'Work Sans', 'Courier New', Courier, monospace;
 }
 
 
