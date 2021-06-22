@@ -28,7 +28,7 @@ const mongoURI= ('mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongo
 
 
 // Create mongo connection
-const conn = mongoose.createConnection(mongoURI, { useUnifiedTopology: true });
+const conn = mongoose.createConnection(mongoURI, { useNewUrlParser: true });
 
 // Init gfs
 let gfs;
@@ -66,18 +66,22 @@ const storage = new GridFsStorage({
 });
 
 // var uploader to pass in storage engine, allows us to make post route
+// want const multer.Instance not multer.Multer
 const uploader = multer({ storage });
 
 // @route GET /
 // @desc Loads form
+// i feel like it's failing here....
 upload.get('/', (req, res) => {
+    // send the rendered view to the client
     res.render('index');
 });
 
-// @route POST /
+// @route POST /uploader
 // this uploads file to db
-upload.post('/uploader', uploader.single('file'), (req, res) => {
+upload.post('/uploader', uploader('file'), (req, res) => {
     res.json({file: req.file});
+    console.log('is getting to this point in the upload bit')
 
 });
 
