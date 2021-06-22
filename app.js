@@ -4,6 +4,9 @@ const express = require('express');
 var fs = require('fs');
 var path = require('path');
 
+const mongodb = require('mongodb');
+
+
 var MongoClient = require('mongodb').MongoClient;
 const { table } = require('console');
 
@@ -23,15 +26,16 @@ app.set('view engine', 'ejs')
 table_names = []
 track_names = []
 
-// Setting up connection for the mongo database using the connection string (uri) 
+
 MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
     // If an error exists 'throw' -- ie print -- error
     if (err) throw err;
 
-    // Declares 'database' to hold the information of the writing_db, a database in our mongodb collections
+    
+    var audio_Database = db.db("audioDB");
     var database = db.db("writing_db");
 
-    // Querying for a datapoint with the type writing, and its track being track 1
+ 
     var query = { "type": 'writing', "track": "track 1"};
     database.collection("writing_cl").find(
       query,
@@ -43,7 +47,7 @@ MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
       
    });
 
-  // Querying for a datapoint with the type writing, and its track being track 1, however this time, it asks for the track variable
+ 
    var query = { "type": 'writing', "track": "track 1"};
    database.collection("writing_cl").find(
      query,
@@ -53,7 +57,7 @@ MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
      //console.log(track_names)
      
   });
-   
+
 
     
    // Variable to hold the arrays to pass over to the ejs font-end file
@@ -94,8 +98,35 @@ app.get('/support', function(req, res){
     res.render('support', {data, data})
 })
 
-app.get('/meditation/track1', function(req, res){
-    res.render('mtrack1', {data, data})
+app.get('/meditation/track1/:trackID', function(req, res){
+
+    try {
+        var trackID = new mongodb.ObjectId(req.params.trackID);
+      } catch(err) {
+        return res.status(400).json({ message: "Invalid trackID in URL parameter. Must be a single String of 12 bytes or a string of 24 hex characters" }); 
+      }
+
+    let bucket = new mongodb.GridFSBucket(audio_Database);
+    let downloadStream =  bucket.openDownloadStream(trackID);
+
+    res.set('content-type', 'audio/mp3');
+    res.set('accept-ranges', 'bytes');
+    
+    downloadStream.on('data', (chunk) => {
+      res.write(chunk);
+      
+    });
+  // Error control means that the file was not found
+    downloadStream.on('error', () => {
+      res.sendStatus(404);
+    });
+  // Ends the stream to ensure that the gates are properly closed when the audi file ends
+    
+
+    
+    downloadStream.on('end', () => {
+        res.end();
+      });
 })
 
 
