@@ -1,52 +1,44 @@
-// import packages
 const express = require('express');
 const path = require('path');
 const multer = require('multer');
-//crypto is deprecated now, so should switch to built in package later
+//crypto deprecated
 const crypto = require('crypto');
-const mongoose = require('mongoose')
-
-// the MongoDB Node.js driver rewrote the tool it uses to parse MongoDB connection strings, this makes useNewUrlParser global
-// opt in to use new topology engine
-// both need to be passed to connect to db
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useUnifiedTopology', true); 
-
-const GridFsStorage = require('multer-gridfs-storage')
-const Grid = require('gridfs-stream')
-const methodOveride = require('method-override')
-//const bodyParser = require('body-parser')
-// was this before: const config = require('./config');
-// not gonna work because routing has not been done for this
-//const config = require('./config');
+const mongoose = require('mongoose');
+const GridFsStorage = require('multer-gridfs-storage');
+const Grid = require('gridfs-stream');
+const methodOveride = require('method-override');
+// bodyParser deprecated
+const bodyParser = require('body-parser');
 const upload = express();
 
 // Middleware
-// Now Node has a built in version of bodyparser
-//upload.use(bodyParser.json());
-
 upload.use(methodOveride('_method'));
 upload.set('view engine', 'ejs');
 
-// Mongo URI
-const mongoURI= ('mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net');
+//global useNewUrlParser, useUnifiedTopology
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useUnifiedTopology', true); 
 
-//create mongo connection
-const conn = mongoose.createConnection(mongoURI);
+var MongoClient = require('mongodb').MongoClient;
+
+// Mongo URI
+const mongoURI = "mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/test";
+const conn = MongoClient.connect(mongoURI);
 
 // Init gfs
 let gfs;
 
-conn.once('open', () => {    
+conn.once('open', function () {    
+        console.log('MongoDB running');
     //Init stream
     gfs = Grid(conn.db, mongoose.mongo);
     gfs.collection('uploads');
     console.log('conn successful')
-})
+});
 
 // Create storage engine
-const storage = new GridFsStorage(console.log('storage engine being made, line 44'),{
-    url: 'mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/test',
+const storage = new GridFsStorage(console.log('storage engine being made'),{
+    url: mongoURI,
     file: (req, file) => {
         console.log('about to return promise')
         // returns promise
@@ -94,9 +86,17 @@ upload.post('/uploader', uploader('file'), (req, res) => {
 
 });
 
+// localhost:5000
 const port = 5000;
-
-upload.listen(port, () => console.log('Server started on port ${port}'));
+upload.listen(port, () => {
+    console.log('MongoDB URL in use: ' + process.env.mongoURI)
+    mongoose.connect(process.env.mongoURI)
+    mongoose.connection
+     .once('open', () => console.log('connected to MongoDB!'))
+     .on('error', err => console.error('connecting to MongoDB ' + err))
+    console.log('Express server listening on port ' + port) 
+   
+   })
 
 
 
