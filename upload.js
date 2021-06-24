@@ -1,16 +1,21 @@
-// import modules
+// import packages
 const express = require('express');
 const path = require('path');
 const multer = require('multer');
 //crypto is deprecated now, so should switch to built in package
 const crypto = require('crypto');
 const mongoose = require('mongoose')
+
+// the MongoDB Node.js driver rewrote the tool it uses to parse MongoDB connection strings, this makes useNewUrlParser global
+mongoose.set('useNewUrlParser', true); 
+
 const GridFsStorage = require('multer-gridfs-storage')
 const Grid = require('gridfs-stream')
 const methodOveride = require('method-override')
 //const bodyParser = require('body-parser')
 // was this before: const config = require('./config');
-//const config = require('./config');
+// not gonna work because routing has not been done for this
+const config = require('./config');
 const upload = express();
 
 // Middleware
@@ -23,12 +28,8 @@ upload.set('view engine', 'ejs');
 // Mongo URI
 const mongoURI= ('mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net');
 
-// 'mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net'
-
-
-
-// Create mongo connection
-const conn = mongoose.createConnection(mongoURI);
+const url = config.mongoURI;
+const conn = mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Init gfs
 let gfs;
@@ -44,6 +45,7 @@ conn.once('open', () => {
 const storage = new GridFsStorage(console.log('storage engine being made, line 44'),{
     url: mongoURI,
     file: (req, file) => {
+        console.log('about to return promise')
         // returns promise
         return new Promise((resolve, reject) => {
             crypto.randomBytes(16, (err, buf) => {
@@ -73,8 +75,6 @@ const uploader = multer({ storage }).single('fieldname');
 
 // @route GET /
 // @desc Loads form
-// i feel like it's failing here....
-
 upload.use(express.json()); //Used to parse JSON bodies
 upload.get('/', (req, res) => {
     // send the rendered view to the client
