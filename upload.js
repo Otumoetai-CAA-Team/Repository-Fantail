@@ -2,12 +2,15 @@
 const express = require('express');
 const path = require('path');
 const multer = require('multer');
-//crypto is deprecated now, so should switch to built in package
+//crypto is deprecated now, so should switch to built in package later
 const crypto = require('crypto');
 const mongoose = require('mongoose')
 
 // the MongoDB Node.js driver rewrote the tool it uses to parse MongoDB connection strings, this makes useNewUrlParser global
-mongoose.set('useNewUrlParser', true); 
+// opt in to use new topology engine
+// both need to be passed to connect to db
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useUnifiedTopology', true); 
 
 const GridFsStorage = require('multer-gridfs-storage')
 const Grid = require('gridfs-stream')
@@ -15,7 +18,7 @@ const methodOveride = require('method-override')
 //const bodyParser = require('body-parser')
 // was this before: const config = require('./config');
 // not gonna work because routing has not been done for this
-const config = require('./config');
+//const config = require('./config');
 const upload = express();
 
 // Middleware
@@ -28,8 +31,8 @@ upload.set('view engine', 'ejs');
 // Mongo URI
 const mongoURI= ('mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net');
 
-const url = config.mongoURI;
-const conn = mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
+//create mongo connection
+const conn = mongoose.createConnection(mongoURI);
 
 // Init gfs
 let gfs;
@@ -43,7 +46,7 @@ conn.once('open', () => {
 
 // Create storage engine
 const storage = new GridFsStorage(console.log('storage engine being made, line 44'),{
-    url: mongoURI,
+    url: 'mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/test',
     file: (req, file) => {
         console.log('about to return promise')
         // returns promise
