@@ -4,6 +4,7 @@
     <head>
         <link rel="stylesheet" href="/CSS/meditation.css">
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="/Images/water.svg" />
         <script src=page_2.js>
         </script>
         <title>Meditation</title>
@@ -22,27 +23,68 @@
         function vistPage_Home(){
             window.location="/"
         }
-        function vistPage_Med_track1(){
-            window.location="/meditation/track1"
+        function vistPage_Med_activity1(){
+            window.location="/meditation/track1/60ca9ae73468902223f4d9ed"
         }
+        function vistPage_Med_activity2(){
+            window.location="/"
+        }
+        function vistPage_Med_activity3(){
+            window.location="/"
+        }
+    
         
         </script>
         
-            <ul class="topnav">
-                <li><a class="active" onclick="vistPage_Home()">Home</a></li>
-                <li><a onclick="vistPage_Support()">Support</a></li>
-                <li><a onclick="vistPage_Contact()">Contact</a></li>
-                <li class="right"><a onclick="vistPage_About()">About</a></li>
-              </ul>
+            
         
             <body>
+                <ul class="topnav">
+                    <li><a class="active" onclick="vistPage_Home()">Home</a></li>
+                    <li><a onclick="vistPage_Support()">Support</a></li>
+                    <li><a onclick="vistPage_Contact()">Contact</a></li>
+                    <li class="right"><a onclick="vistPage_About()">About</a></li>
+                  </ul>
+
+                <div class="container">
             
+                    <div class="header">
+                        <h1>Meditation</h1>
+                        
                     </div>
-                    <h2>
-                        This is mediation 
-                       <button id="button_M" class="buttons" onclick="vistPage_Med_track1()"><%=data.track[0]%></button>
-                       
-                    </h2>
+
+                    <div class="item" id=task_1>
+                        <div class="task_content">
+                            <h2>Activity 1</h2>
+                            <p>Text description of activity</p>
+                            <label>Track 1:</label>
+                            <button id="button_M1" class="buttons" onclick="vistPage_Med_activity1()">Click Me!</button>
+                        </div>
+                    </div>
+
+                    <div class="item" id=task_2>
+                        <div class="task_content">
+                            <h2>Activity 2</h2>
+                            <p>Text description of activity</p>
+                            <label>Track 2:</label>
+                            <button id="button_M2" class="buttons" onclick="vistPage_Med_activity2()">Click Me!</button>
+                        </div>    
+                    </div>
+
+                    <div class="item" id="task_3">
+                        <div class="task_content">
+                            <h2>Activity 3</h2>
+                            <p>Text description of activity</p>
+                            <label>Track 3:</label>
+                            <button id="button_M3" class="buttons" onclick="vistPage_Med_activity3()">Click Me!</button>
+                        </div>
+                    </div>
+
+                    
+                    <div>
+                        
+                    </div>
                 </div>
+
             </body>
         </html>
