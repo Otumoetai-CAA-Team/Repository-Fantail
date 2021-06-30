@@ -48,9 +48,7 @@ body {
 
 .item {
   background-color: whitesmoke;
-  height: 20vh;
-  
-  
+  height: 20vh;  
 }
 
 #cell1 {
@@ -64,7 +62,6 @@ body {
   font-size: 2em;
 }
 
-
 .sub-item h1{
   text-align: left;
   padding: 3%;
@@ -76,6 +73,7 @@ p {
 }
 
 .link {
+  position: relative;
   margin: 0;
   background-color: #005151;
   color: whitesmoke;
