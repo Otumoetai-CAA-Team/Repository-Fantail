@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="/CSS/writing.css">
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="/Images/water.svg" />
         <script src=page_2.js>
         </script>
         <title>Writing</title>
@@ -21,6 +22,15 @@
         function vistPage_Home(){
             window.location="/"
         }
+        function vistPage_Wri_activity1(){
+            window.location="/"
+        }
+        function vistPage_Wri_activity2(){
+            window.location="/"
+        }
+        function vistPage_Wri_activity3(){
+            window.location="/"
+        }
         </script>
         
             <ul class="topnav">
@@ -29,6 +39,46 @@
                 <li><a onclick="vistPage_Contact()">Contact</a></li>
                 <li class="right"><a onclick="vistPage_About()">About</a></li>
               </ul>
+
+              <div class="container">
+            
+                <div class="header">
+                    <h1>Writing</h1>
+                    
+                </div>
+
+                <div class="item" id=task_1>
+                    <div class="task_content">
+                        <h2>Activity 1</h2>
+                        <p>Text description of activity</p>
+                        <label>Track 1:</label>
+                        <button id="button_M1" class="buttons" onclick="vistPage_Wri_activity1()">Click Me!</button>
+                    </div>
+                </div>
+
+                <div class="item" id=task_2>
+                    <div class="task_content">
+                        <h2>Activity 2</h2>
+                        <p>Text description of activity</p>
+                        <label>Track 1:</label>
+                        <button id="button_M1" class="buttons" onclick="vistPage_Wri_activity2()">Click Me!</button>
+                    </div>    
+                </div>
+
+                <div class="item" id="task_3">
+                    <div class="task_content">
+                        <h2>Activity 3</h2>
+                        <p>Text description of activity</p>
+                        <label>Track 1:</label>
+                        <button id="button_M1" class="buttons" onclick="vistPage_Wri_activity3()">Click Me!</button>
+                    </div>
+                </div>
+
+                
+                <div>
+                    
+                </div>
+            </div>
         
             <body>
             

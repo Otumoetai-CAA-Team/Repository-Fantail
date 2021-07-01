@@ -40,3 +40,41 @@ body {
 {
     text-align: center;
 }
+
+body {
+  font-family: 'Work Sans','Courier New', Courier, monospace;
+  margin: 0;
+  background-color: whitesmoke;
+}
+
+.container {
+grid-gap: 0;
+display: grid;
+align-content: center;
+grid-template-columns: auto;
+grid-gap: 1rem;
+margin: 0;
+}
+
+.container .header h1{
+text-align: center;
+font-size: 10vh;
+font-family: 'Work Sans', 'Courier New', Courier, monospace;
+margin: 0;
+
+}
+
+.item {
+text-align: left;
+font-size: 1.5rem;
+width: 100vw;
+height: auto;
+background-color: grey;
+padding-left: 1%;
+margin: 0;
+
+}
+
+.task_content {
+margin: 1%;
+}

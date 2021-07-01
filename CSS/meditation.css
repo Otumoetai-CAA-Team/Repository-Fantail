@@ -6,7 +6,6 @@ ul.topnav {
   background-color: #005151;
   font-size: x-large;
   font-family: 'Work Sans', 'Courier new', courier, monospace;
-  margin: 0;
 
 }
 
@@ -34,12 +33,48 @@ ul.topnav li.right {float: right;}
 body {
     font-family: 'Work Sans','Courier New', Courier, monospace;
     margin: 0;
+    background-color: whitesmoke;
 }
 
-.p1
-{
-    text-align: center;
+.container {
+  grid-gap: 0;
+  display: grid;
+  align-content: center;
+  grid-template-columns: auto;
+  grid-gap: 1rem;
+  margin: 0;
 }
 
+.container .header h1{
+  text-align: center;
+  font-size: 10vh;
+  font-family: 'Work Sans', 'Courier New', Courier, monospace;
+  margin: 0;
 
+}
 
+.item {
+  text-align: left;
+  font-size: 1.5rem;
+  width: 100vw;
+  height: auto;
+  background-color: grey;
+  padding-left: 1%;
+  margin: 0;
+
+}
+
+.task_content {
+  margin: 1%;
+}
+
+.buttons {
+  text-align: center;
+  background-color: white;
+  cursor: pointer;
+  width: 120px;
+  height: 30px;
+  font-family: 'Work Sans', 'Courier New', Courier, monospace;
+  font-size: 1.25rem;
+
+}
