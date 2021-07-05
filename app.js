@@ -110,8 +110,9 @@ app.get('/meditation/track/:trackID', function(req, res){
     let downloadStream =  bucket.openDownloadStream(trackID);
 
     
-    res.set('accept-ranges', 'bytes');
+    
     res.set('content-type', 'audio/mp3');
+    res.set('accept-ranges', 'bytes');
     
     downloadStream.on('data', (chunk) => {
       res.write(chunk);
