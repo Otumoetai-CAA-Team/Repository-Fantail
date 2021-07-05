@@ -65,6 +65,7 @@ body {
 }
 
 .task_content {
+  display: grid;
   margin: 1%;
 }
 
