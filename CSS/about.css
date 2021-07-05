@@ -7,6 +7,9 @@ ul.topnav {
   background-color: #005151;
   font-size: x-large;
   font-family: 'Work Sans', 'Courier New', Courier, monospace;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 ul.topnav li {float: left;}
@@ -17,6 +20,7 @@ ul.topnav li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  
 }
 
 ul.topnav li a:hover:not(.active) {background-color: #111;}
@@ -44,6 +48,8 @@ h1 {
   grid-template-rows: max-content;
   align-content:center;
   font-family: "Work Sans", sans-serif;
+  
+  z-index: -1;
 }
 
 .item {
@@ -55,6 +61,7 @@ h1 {
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
+  
 }
 
 #item1{
