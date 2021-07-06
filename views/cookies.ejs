@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <script type='text/javascript' src='app.js'></script>
+        <head>
+            <link rel="stylesheet" href="/CSS/cookies.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap">
+            <link rel="shortcut icon" type="image/x-icon" href="/Images/water.svg"/>
+            <script scr=cookies.js></script>
+            <title>Cookie Practice</title>
+        </head>
+
+        <script>
+            // Sets up routes to different pages from this page
+            function vistPage_About(){
+                        window.location="/about"
+            }
+            function vistPage_Contact(){
+                window.location="/contact"
+            }
+            function vistPage_Home(){
+                window.location="/"
+            }
+            function vistPage_Support(){
+                window.location="/support"
+            }
+            
+            </script>
+            <!-- Buttons, when clicked will take users to that page -->
+            <!-- These buttons are in classes, so the style is conserverd -->
+                <ul class="topnav">
+                    <li><a class="active" onclick="vistPage_Home()">Home</a></li>
+                    <li><a onclick="vistPage_Support()">Support</a></li>
+                    <li><a onclick="vistPage_Contact()">Contact</a></li>
+                    <li class="right"><a onclick="vistPage_About()">About</a></li>
+                </ul>
+            
+                <body>
+                    <div class="grid-container">
+                        <div class="item" id="item1">
+                            <h1>
+                                About Us
+                            </h1>
+                        </div>
+                        <div class="item">
+                            <a onclick="vistPage_Cookies">Cookies Page</a>
+                        </div>
+                        <div class="item">3</div>
+                        <div class="item">4</div>
+                        <div class="item">5</div>
+                        <div class="item">6</div>
+                        <div class="item">7</div>
+                    </div>
+                    <div class="footer">
+                        <h1>DISCLAIMER</h1>
+                        <p>
+                            Disclaimer text will be here
+                        </p>
+                    </div>
+    
+                </body>
+            </html>
+</html>

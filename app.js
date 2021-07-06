@@ -98,6 +98,10 @@ app.get('/support', function(req, res){
     res.render('support', {data, data})
 })
 
+app.get('/cookies', function(req, res){
+    res.render('cookies', {data, data})
+})
+
 app.get('/meditation/track1/:trackID', function(req, res){
 
     try {
