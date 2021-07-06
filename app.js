@@ -98,11 +98,7 @@ app.get('/support', function(req, res){
     res.render('support', {data, data})
 })
 
-app.get('/cookies', function(req, res){
-    res.render('cookies', {data, data})
-})
-
-app.get('/meditation/track1/:trackID', function(req, res){
+app.get('/meditation/track/:trackID', function(req, res){
 
     try {
         var trackID = new mongodb.ObjectId(req.params.trackID);
@@ -113,6 +109,8 @@ app.get('/meditation/track1/:trackID', function(req, res){
     let bucket = new mongodb.GridFSBucket(audio_Database);
     let downloadStream =  bucket.openDownloadStream(trackID);
 
+    
+    
     res.set('content-type', 'audio/mp3');
     res.set('accept-ranges', 'bytes');
     
