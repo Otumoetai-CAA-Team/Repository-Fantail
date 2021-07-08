@@ -23,12 +23,15 @@ ul.topnav li a {
   
 }
 
+/* Adds hover effect for navbar button */
 ul.topnav li a:hover:not(.active) {background-color: #111;}
 
 ul.topnav li a.active {background-color: #37BE64;}
 
+/* Makes li elements stick tot the right side of the ul element */
 ul.topnav li.right {float: right;}
 
+/*Changes the navbar from horizontal to stacked when the screen size is less than or equal to 600px*/
 @media screen and (max-width: 600px) {
   ul.topnav li.right, 
   ul.topnav li {float: none;}
@@ -39,6 +42,7 @@ h1 {
   font-family: 'Work Sans', 'Courier New', Courier, monospace;
 }
 
+/* Specifies basic container parameters Eg: shape, rows, column, etc */
 .grid-container{
   background-color: transparent;
   padding-top: 0.5%;
@@ -48,7 +52,6 @@ h1 {
   grid-template-rows: max-content;
   align-content:center;
   font-family: "Work Sans", sans-serif;
-  
   z-index: -1;
 }
 
@@ -65,8 +68,7 @@ h1 {
 }
 
 #item1{
-  grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column: 1 /span 3;
 }
 
 body {

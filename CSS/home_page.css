@@ -1,3 +1,4 @@
+/*Navbar*/
 ul.topnav {
   list-style-type: none;
   margin: 0;
@@ -23,12 +24,15 @@ ul.topnav li a {
   
 }
 
+/* Adds hover effect for navbar button */
 ul.topnav li a:hover:not(.active) {background-color: #111;}
 
 ul.topnav li a.active {background-color: #37BE64;}
 
+/* Makes li elements stick tot the right side of the ul element */
 ul.topnav li.right {float: right;}
 
+/*Changes the navbar from horizontal to stacked when the screen size is less than or equal to 600px*/
 @media screen and (max-width: 600px) {
   ul.topnav li.right, 
   ul.topnav li {float: none;}
@@ -51,6 +55,7 @@ ul.topnav li.right {float: right;}
   text-align: center;
 }
 
+/*Styles layer 1 to create a new background for the buttons*/
 .layer_1 {
   background-color: #f9d1d4;
   background-size: cover;
@@ -58,8 +63,9 @@ ul.topnav li.right {float: right;}
   position: relative;
   z-index: 1;
 }
+
+/*Title styling*/
 .parallax-background h1 {
-  /* Text styling */
   color:#F58F96;
   font-family: 'Work Sans', 'Courier New', Courier, monospace;
   font-size: 15vw;
@@ -68,12 +74,9 @@ ul.topnav li.right {float: right;}
   padding-top: 25vh;
   padding-bottom: 25vh;
   margin: 0;
- 
 }
 
-
-
-/* ----- Body Styling ----- */
+/*Body Styling*/
 body {
   max-width: 100%;
   height: auto;
@@ -82,7 +85,7 @@ body {
   margin: 0;
 }
 
-/* ----- Header and button container styling -----*/
+/*Header and button container styling*/
 .grid-container {
   position: absolute;
   top: 50%;
@@ -90,7 +93,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-/* ----- Button Styling ----- */
+/*Button Styling*/
 .grid-container .buttons{
   color: #130601;
   background-color: #D1F9F6;
@@ -104,23 +107,21 @@ body {
   border: 0;
 }
 
-/* ----- Hover Effect on Buttons ----- */
+/*Hover Effect on Buttons*/
 .grid-container .buttons:hover{
   background-color: #FB9C74;
   color: #F9F1F1;
   font-size: 2.1vw;
-
-
 }
 
-/* ----- Spacing between middle button ----- */
+/*Spacing between middle button*/
 #button_W {
   margin-top: 1%;
   margin-bottom: 1%;
   margin: 4vh;
 }
 
-/* grid styling to space buttons out a */
+/*grid styling to space buttons out*/
 .grid-container{
   display: grid;
   grid-template-columns: auto;

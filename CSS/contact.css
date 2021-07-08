@@ -1,3 +1,4 @@
+/*Navbar*/
 ul.topnav {
   list-style-type: none;
   margin: 0;
@@ -22,12 +23,15 @@ ul.topnav li a {
   text-decoration: none;
 }
 
+/* Adds hover effect for navbar button */
 ul.topnav li a:hover:not(.active) {background-color: #111;}
 
 ul.topnav li a.active {background-color: #37BE64;}
 
+/* Makes li elements stick tot the right side of the ul element */
 ul.topnav li.right {float: right;}
 
+/*Changes the navbar from horizontal to stacked when the screen size is less than or equal to 600px*/
 @media screen and (max-width: 600px) {
   ul.topnav li.right, 
   ul.topnav li {float: none;}
@@ -42,6 +46,7 @@ body {
     text-align: center;
 }
 
+/* Displays all item using the grid display and add spacing and gaps. Also, creates 3 column */
 .grid-container{
   background-color: transparent;
   grid-gap: 10px;
@@ -60,17 +65,18 @@ body {
   font-size: 30px;
 }
 
+/* Make item 1 span all 3 columns */
 .item1{
   grid-column:  1/4;
 }
 
+/* Makes item 2 span all 3 columns */
 .item2 {
   grid-column: 1/4 ;
   font-family: 'Work Sans', 'Courier New', Courier, monospace;
 }
 
-
-
+/* Specifies the size and other details for the contact cards */
 .grid-container .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
@@ -84,6 +90,7 @@ body {
   font-size: 18px;
 }
 
+/* Email button styling at the bottom of each card */
 .grid-container button {
   border: none;
   outline: 0;
@@ -103,6 +110,7 @@ body {
   color: black;
 }
 
+/* Adds hover effect for card buttons */
 .grid-container button:hover, a:hover {
   opacity: 0.7;
 }
