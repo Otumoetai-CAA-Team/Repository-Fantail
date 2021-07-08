@@ -1,55 +1,61 @@
-const express = require('express');
-const path = require('path');
+// all packages
+// multer required to handle multipart encoded data
 const multer = require('multer');
+const express = require('express');
+// bodyparser (deprecated) required to get content sent from HTML forms
+const bodyParser = require('body-parser');
+const path = require('path');
 //crypto deprecated
 const crypto = require('crypto');
 const mongoose = require('mongoose');
+
+// multer-gridfs-storage is the storage engine for multer to upload file directly to MongoDB,
 const GridFsStorage = require('multer-gridfs-storage');
+// gridfs-stream handles the chunking of the data
 const Grid = require('gridfs-stream');
 const methodOveride = require('method-override');
-// bodyParser deprecated
-const bodyParser = require('body-parser');
 const upload = express();
-
-// Middleware
-upload.use(methodOveride('_method'));
-upload.set('view engine', 'ejs');
 
 //global useNewUrlParser, useUnifiedTopology
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true); 
 
-var MongoClient = require('mongodb').MongoClient;
+// Middleware
+upload.use(bodyParser.json());
+upload.use(methodOveride('_method'));
+upload.set('view engine', 'ejs');
 
 // Mongo URI
-const mongoURI = "mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/test";
-const conn = MongoClient.connect(mongoURI);
+const mongoURI = "mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/amy";
+// create mongo conn
+const conn = mongoose.createConnection(mongoURI);
 
-// Init gfs
+// Init gfs var
 let gfs;
 
-conn.once('open', function () {    
-        console.log('MongoDB running');
+conn.once('open', () => {    
     //Init stream
-    gfs = Grid(conn.db, mongoose.mongo);
-    gfs.collection('uploads');
-    console.log('conn successful')
+    gfs = Grid(conn.db, mongoose.mongo)
+    gfs.collection('pages')
+    console.log('conn made')
 });
 
 // Create storage engine
-const storage = new GridFsStorage(console.log('storage engine being made'),{
-    url: mongoURI,
+var storage = new GridFsStorage({ 
+    url: 'mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/amy',
+    // okay that req is declared but not read?
     file: (req, file) => {
-        console.log('about to return promise')
         // returns promise
         return new Promise((resolve, reject) => {
+            console.log('making new promise')
             crypto.randomBytes(16, (err, buf) => {
                 // if error throw error
                 if (err) {
-                    console.log('error has been thrown when creating storage engine')
+                    console.log('fals within create storage eng')
                     return reject(err);
                 }
                 // no error, create new file
+                console.log('no error in making promise')
                 const filename = buf.toString('hex') + path.extname(file.originalname);
                 const fileInfo = {
                     filename: filename,
@@ -57,7 +63,6 @@ const storage = new GridFsStorage(console.log('storage engine being made'),{
                 };
                 // resolve promise
                 resolve(fileInfo);
-                console.log('promise resolved')
             });
         });
     }
