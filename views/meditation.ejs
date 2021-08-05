@@ -69,7 +69,7 @@
                             <h2>Activity 1</h2>
                             <p>Text description of activity </p>
                             <label>Track 1:<br></br></label>
-                            <audio controls id="audioplayer"  src="/meditation/track/60ca9ae73468902223f4d9ed"></audio>
+                            <audio controls id=audio controlsList="nodownload" src="/meditation/track/60ca9ae73468902223f4d9ed"></audio>
                         </div>
                     </div>
 
@@ -79,7 +79,7 @@
                             <h2>Activity 2</h2>
                             <p>Text description of activity</p>
                             <label>Track 2:<br></br></label>
-                            <audio controls controlsList="nodownload" src="/meditation/track/60c917fc4eb93bc4a29964ba"></audio>
+                            <audio controls id="audioplayer" controlsList="nodownload" src="/meditation/track/60c917fc4eb93bc4a29964ba"></audio>
                         </div>    
                     </div>
 
@@ -89,7 +89,7 @@
                             <h2>Activity 3</h2>
                             <p>Text description of activity</p>
                             <label>Track 3:<br></br></label>
-                            <audio controls controlsList="nodownload" src="meditation/track/60ca9ae73468902223f4d9ed"></audio>
+                            <audio controls controls id="audioplayer" controlsList="nodownload" src="meditation/track/60ca9ae73468902223f4d9ed"></audio>
                         </div>
                     </div>
 
@@ -97,21 +97,13 @@
                     <div>
           <script>
 var player = document.getElementById("audioplayer");
-
-function refresh(){
-    player.play();
-}
-
-player.addEventListener("skip", (event) => {
+ player.controlBar.progressControl.disable();
+player.addEventListener("play", (event) => {
     location.reload();
-    refresh()
-    
 });
+    
 
-// player.addEventListener("click", (event) => {
-// console.log('Video stopped either because 1) it was over, ' +
-//     'or 2) no further data is available.');
-// });
+
           </script>
                         
                     </div>
