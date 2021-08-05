@@ -11,6 +11,7 @@ var MongoClient = require('mongodb').MongoClient;
 const { table } = require('console');
 
 //const uri = process.env.MONGODB_URI;
+// This is the string to connect 
 const uri = process.env.MONGODB_URI || "mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/test";
 
 // Declaring the express to bind the variable app to the library

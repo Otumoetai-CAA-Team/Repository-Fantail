@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="/CSS/meditation.css">
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
         <link rel="shortcut icon" type="image/x-icon" href="/Images/water.svg" />
+        
         <script scr=cookies.js src=page_2.js>
         </script>
         <title>Meditation</title>
@@ -32,8 +33,15 @@
         function vistPage_Med_activity3(){
             window.location="/"
         }
-    
-        
+
+        function audiorefresh(){
+            window.location.reload();
+        }
+      
+       
+
+  
+                        
         </script>
         
             
@@ -61,7 +69,7 @@
                             <h2>Activity 1</h2>
                             <p>Text description of activity </p>
                             <label>Track 1:<br></br></label>
-                            <audio controls controlsList="nodownload" src="/meditation/track/60ca9ae73468902223f4d9ed"></audio>
+                            <audio controls id="audioplayer"  src="/meditation/track/60ca9ae73468902223f4d9ed"></audio>
                         </div>
                     </div>
 
@@ -87,6 +95,24 @@
 
                     
                     <div>
+          <script>
+var player = document.getElementById("audioplayer");
+
+function refresh(){
+    player.play();
+}
+
+player.addEventListener("skip", (event) => {
+    location.reload();
+    refresh()
+    
+});
+
+// player.addEventListener("click", (event) => {
+// console.log('Video stopped either because 1) it was over, ' +
+//     'or 2) no further data is available.');
+// });
+          </script>
                         
                     </div>
                 </div>
