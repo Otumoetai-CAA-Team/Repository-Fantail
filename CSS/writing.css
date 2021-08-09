@@ -77,6 +77,11 @@ margin: 0;
 
 }
 
+.item audio::-webkit-media-controls-timeline {
+  display: none;
+} 
+  
+
 .task_content {
 margin: 1%;
 }
