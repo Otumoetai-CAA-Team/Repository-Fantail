@@ -5,14 +5,14 @@
         <link rel="stylesheet" href="/CSS/meditation.css">
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
         <link rel="shortcut icon" type="image/x-icon" href="/Images/water.svg" />
-        <script src=page_2.js>
-        </script>
+        
+        
         <title>Meditation</title>
     </head>
     <script>
-
+// The following are the functions that take users to the correct routes in accordance to what the main app.js has get.routes for
         function vistPage_About(){
-            window.location="/about"
+            window.location="/about" 
         }
         function vistPage_Contact(){
             window.location="/contact"
@@ -32,14 +32,23 @@
         function vistPage_Med_activity3(){
             window.location="/"
         }
-    
-        
+
+        function audiorefresh(){
+            window.location.reload();
+        }
+      
+       
+
+  
+                        
         </script>
         
             
         
             <body>
+                <!--Navbar-->
                 <ul class="topnav">
+                    <!-- these are buttons with their onclick functions taking to other window.locations that match up with the relevant website routes -->
                     <li><a class="active" onclick="vistPage_Home()">Home</a></li>
                     <li><a onclick="vistPage_Support()">Support</a></li>
                     <li><a onclick="vistPage_Contact()">Contact</a></li>
@@ -47,46 +56,47 @@
                   </ul>
 
                 <div class="container">
-            
+                    
+                    <!--Title of page-->
                     <div class="header">
                         <h1>Meditation</h1>
                         
                     </div>
-
+                    
+                    <!--Container for activity 1-->
                     <div class="item" id=task_1>
                         <div class="task_content">
                             <h2>Activity 1</h2>
                             <p>Text description of activity </p>
                             <label>Track 1:<br></br></label>
+                            <!-- audio tags for the corrosponding audio file, in this case it's for the 'I will survive' -->
                             <audio controls controlsList="nodownload" src="/meditation/track/60ca9ae73468902223f4d9ed"></audio>
-                            <!-- <button id="button_M1" class="buttons" onclick="vistPage_Med_activity1()">Click Me!</button> -->
                         </div>
                     </div>
 
+                    <!--Container for activity 2-->
                     <div class="item" id=task_2>
                         <div class="task_content">
                             <h2>Activity 2</h2>
                             <p>Text description of activity</p>
                             <label>Track 2:<br></br></label>
-                            <audio controls controlsList="nodownload" src="/meditation/track/60c917fc4eb93bc4a29964ba"></audio>
-                            <!-- <button id="button_M2" class="buttons" onclick="vistPage_Med_activity2()">Click Me!</button> -->
+                            <!-- audio tags for the corrosponding audio file, in this case it's for the Countdown song -->
+                            <audio controls controlsList="nodownload" controlsList="nodownload" src="/meditation/track/60c917fc4eb93bc4a29964ba"></audio>
                         </div>    
                     </div>
 
+                    <!--Container for activity 3-->
                     <div class="item" id="task_3">
                         <div class="task_content">
                             <h2>Activity 3</h2>
                             <p>Text description of activity</p>
                             <label>Track 3:<br></br></label>
-                            <audio controls controlsList="nodownload" src="meditation/track/60ca9ae73468902223f4d9ed"></audio>
-                            <!-- <button id="button_M3" class="buttons" onclick="vistPage_Med_activity3()">Click Me!</button> -->
+                            <!-- audio tags for the corrosponding audio file, in this case it's for the Countdown song -->
+                            <audio controls controlsList="nodownload" controlsList="nodownload" src="meditation/track/60ca9ae73468902223f4d9ed"></audio>
                         </div>
                     </div>
 
-                    
-                    <div>
-                        
-                    </div>
+
                 </div>
 
             </body>

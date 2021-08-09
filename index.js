@@ -22,10 +22,8 @@ app.use(express.static(path.join(__dirname, '/')));
 // Preparing the link between the js and ejs files
 app.set('view engine', 'ejs')
 
-
 table_names = []
 track_names = []
-
 
 MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
     // If an error exists 'throw' -- ie print -- error

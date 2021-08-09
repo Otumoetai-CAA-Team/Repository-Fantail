@@ -1,16 +1,14 @@
+// Declaring relevant modules
 const http = require('http');
-const mysql = require('mysql');
 const express = require('express');
 var fs = require('fs');
 var path = require('path');
-
 const mongodb = require('mongodb');
-
-
 var MongoClient = require('mongodb').MongoClient;
 const { table } = require('console');
 
 //const uri = process.env.MONGODB_URI;
+// This is the string to connect 
 const uri = process.env.MONGODB_URI || "mongodb+srv://fyeard1449:hcGBE6g5i7ZhuodU@clusterm.zscdl.mongodb.net/test";
 
 // Declaring the express to bind the variable app to the library
@@ -78,7 +76,6 @@ app.get('/education', function(req, res){
 })
 
 app.get('/writing', function(req, res){
-
     res.render('writing', {data, data})  
 })
 
@@ -100,19 +97,24 @@ app.get('/support', function(req, res){
 
 app.get('/meditation/track/:trackID', function(req, res){
 
+
+  // The var trackID in the req.params can be use to access strings in the actual URL of the current route
     try {
         var trackID = new mongodb.ObjectId(req.params.trackID);
       } catch(err) {
         return res.status(400).json({ message: "Invalid trackID in URL parameter. Must be a single String of 12 bytes or a string of 24 hex characters" }); 
       }
 
+    // Creates a bucket to store the chunks that have been sent over from Grid.FS
     let bucket = new mongodb.GridFSBucket(audio_Database);
     let downloadStream =  bucket.openDownloadStream(trackID);
 
     
-    res.set('accept-ranges', 'bytes');
+    // This allows for the audio file to be skipped as now the website can accept all possible ranges of bytes that have been sent over
     res.set('content-type', 'audio/mp3');
+    res.set('accept-ranges', 'bytes');
     
+    // Begins to download the audio file and ready to stream across to the user
     downloadStream.on('data', (chunk) => {
       res.write(chunk);
       
@@ -122,9 +124,6 @@ app.get('/meditation/track/:trackID', function(req, res){
       res.sendStatus(404);
     });
   // Ends the stream to ensure that the gates are properly closed when the audi file ends
-    
-
-    
     downloadStream.on('end', () => {
         res.end();
       });

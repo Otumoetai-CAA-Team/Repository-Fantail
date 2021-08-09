@@ -6,7 +6,9 @@ ul.topnav {
   background-color: #005151;
   font-size: x-large;
   font-family: 'Work Sans', 'Courier new', courier, monospace;
-
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 ul.topnav li {float: left;}
@@ -25,6 +27,7 @@ ul.topnav li a.active {background-color: #37BE64;}
 
 ul.topnav li.right {float: right;}
 
+/*Changes the navbar from horizontal to stacked when the screen size is less than or equal to 600px*/
 @media screen and (max-width: 600px) {
   ul.topnav li.right, 
   ul.topnav li {float: none;}
@@ -36,6 +39,7 @@ body {
     background-color: whitesmoke;
 }
 
+/* Displays the items with the gris display and has one column*/
 .container {
   grid-gap: 0;
   display: grid;
@@ -45,14 +49,15 @@ body {
   margin: 0;
 }
 
+/* Title of page */
 .container .header h1{
   text-align: center;
   font-size: 10vh;
   font-family: 'Work Sans', 'Courier New', Courier, monospace;
   margin: 0;
-
 }
 
+/* Styling for each item in the container grid */
 .item {
   text-align: left;
   font-size: 1.5rem;
@@ -61,14 +66,25 @@ body {
   background-color: grey;
   padding-left: 1%;
   margin: 0;
+  
 
+
+  
 }
+
+.item audio::-webkit-media-controls-timeline {
+  display: none;
+} 
+  
+
+
 
 .task_content {
   display: grid;
   margin: 1%;
 }
 
+/* Styling for buttons in all grid items */
 .buttons {
   text-align: center;
   background-color: white;
@@ -77,5 +93,4 @@ body {
   height: 30px;
   font-family: 'Work Sans', 'Courier New', Courier, monospace;
   font-size: 1.25rem;
-
 }

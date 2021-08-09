@@ -18,6 +18,8 @@ const connenction = mysql.createConnection({
 
 app.get('/', function(req, res){
 
+    res.write('HI')
+
  connenction.connect(function(err){
     if(err){
         console.log("Error connecting to the database")

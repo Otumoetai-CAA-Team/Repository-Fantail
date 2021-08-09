@@ -7,6 +7,9 @@ ul.topnav {
   font-size: x-large;
   font-family: 'Work Sans', 'Courier New', Courier, monospace;
   margin: 0;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 
 }
 
@@ -74,6 +77,12 @@ padding-left: 1%;
 margin: 0;
 
 }
+
+
+.item audio::-webkit-media-controls-timeline {
+  display: none;
+} 
+  
 
 .task_content {
 margin: 1%;

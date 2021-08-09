@@ -7,7 +7,9 @@ ul.topnav {
     font-size: x-large;
     font-family: 'Work Sans', 'Courier New', Courier, monospace;
     margin: 0;
-  
+    position: sticky;
+    top: 0;
+    z-index: 2;
   }
   
   ul.topnav li {float: left;}
