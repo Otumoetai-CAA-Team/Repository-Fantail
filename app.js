@@ -24,7 +24,7 @@ app.set('view engine', 'ejs')
 table_names = []
 track_names = []
 
-
+// This sets up the connection with the mongodb client, using the uri stated above as the password 
 MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, db) {
     // If an error exists 'throw' -- ie print -- error
     if (err) throw err;
