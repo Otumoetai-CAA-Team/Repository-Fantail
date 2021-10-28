@@ -23,3 +23,6 @@ The following people have contributed to developing the app:
 * Alex Freeman (https://github.com/AlexFreeman1449)
 * Amy McAulay (https://github.com/amymcaulay)
 * Chase Winder (https://github.com/Chase-81)
+
+The link to our website can be found here:
+https://fierce-island-71823.herokuapp.com/
